@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Panel de Actividades</title>
+  <title>Mi Portafolio | Dev 2026</title>
 
   <script src="https://cdn.tailwindcss.com"></script>
 
@@ -19,6 +19,11 @@
       background: rgba(255, 255, 255, 0.03);
       backdrop-filter: blur(10px);
       border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .gradient-text {
+      background: linear-gradient(90deg, #38bdf8, #818cf8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
     .blob {
       position: absolute;
@@ -39,13 +44,26 @@
   <div class="blob bottom-0 right-0" style="background:#818cf8;"></div>
 
   <!-- CONTENEDOR CENTRADO -->
-  <main class="min-h-screen flex items-center justify-center px-6">
+  <main class="min-h-screen flex items-center justify-center px-6 py-14">
     <div class="w-full max-w-5xl">
 
-      <!-- PANEL -->
+      <!-- HERO (solo título, limpio) -->
+      <section class="text-center glass rounded-3xl p-10 md:p-14 mb-10">
+        <div class="flex flex-col items-center gap-5">
+          <span class="bg-sky-500/10 text-sky-400 px-4 py-1 rounded-full text-sm font-medium">
+            Disponible para proyectos
+          </span>
+
+          <h1 class="text-4xl md:text-6xl font-bold leading-tight">
+            Diseñando el <span class="gradient-text">futuro digital</span>
+          </h1>
+        </div>
+      </section>
+
+      <!-- PANEL DE ACTIVIDADES -->
       <section id="panel">
         <div class="text-center mb-8">
-          <h1 class="text-3xl md:text-4xl font-bold">Panel de Actividades</h1>
+          <h2 class="text-2xl md:text-3xl font-bold">Panel de Actividades</h2>
           <p class="text-gray-400 mt-2">
             Selecciona una sección para ingresar.
           </p>
@@ -55,7 +73,7 @@
 
           <!-- DEBERES -->
           <div class="glass p-6 rounded-3xl hover:border-sky-500/50 transition">
-            <h2 class="text-xl font-bold mb-2">Deberes</h2>
+            <h3 class="text-xl font-bold mb-2">Deberes</h3>
             <p class="text-gray-400 text-sm mb-5">
               Actividades asignadas.
             </p>
@@ -69,7 +87,7 @@
 
           <!-- LECCIONES -->
           <div class="glass p-6 rounded-3xl hover:border-indigo-500/50 transition">
-            <h2 class="text-xl font-bold mb-2">Lecciones</h2>
+            <h3 class="text-xl font-bold mb-2">Lecciones</h3>
             <p class="text-gray-400 text-sm mb-5">
               Material de estudio.
             </p>
@@ -82,7 +100,7 @@
 
           <!-- EXAMEN -->
           <div class="glass p-6 rounded-3xl hover:border-emerald-500/50 transition">
-            <h2 class="text-xl font-bold mb-2">Evaluación</h2>
+            <h3 class="text-xl font-bold mb-2">Evaluación</h3>
             <p class="text-gray-400 text-sm mb-5">
               Evaluación final del curso.
             </p>
@@ -98,7 +116,7 @@
 
       <!-- FOOTER -->
       <footer class="text-center text-gray-500 text-sm mt-10">
-        <p>© 2026 • @Deinszxcq</p>
+        <p>© 2026</p>
       </footer>
 
     </div>
