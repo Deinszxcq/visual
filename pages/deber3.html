@@ -3,30 +3,323 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Deber 3</title>
-  <link rel="stylesheet" href="../css/style.css" />
-</head>
-<body>
-  <header class="topbar">
-    <div class="brand">
-      <div class="logo">V</div>
-      <div>
-        <h1>Deber 3</h1>
-        <p class="subtitle">Contenido del deber</p>
-      </div>
-    </div>
-  </header>
+  <title>Deber 3 - Programación Orientada a Objetos (POO)</title>
 
-  <main class="container">
-    <section class="card">
-      <h2>Deber 3</h2>
-      <p>Aquí puedes escribir el contenido de tu deber.</p>
-      <a class="btn" href="../index.html">⬅ Volver al inicio</a>
-    </section>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: #0f172a;
+      color: white;
+    }
+    .glass {
+      background: rgba(255, 255, 255, 0.03);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .gradient-text {
+      background: linear-gradient(90deg, #38bdf8, #818cf8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .blob {
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      background: #38bdf8;
+      filter: blur(80px);
+      opacity: 0.2;
+      z-index: -1;
+    }
+    pre { white-space: pre-wrap; word-wrap: break-word; }
+  </style>
+</head>
+
+<body class="overflow-x-hidden relative">
+
+  <!-- blobs decorativos -->
+  <div class="blob top-0 left-0"></div>
+  <div class="blob bottom-0 right-0" style="background:#818cf8;"></div>
+
+  <main class="min-h-screen flex items-center justify-center px-6 py-14">
+    <div class="w-full max-w-5xl">
+
+      <!-- ENCABEZADO -->
+      <section class="text-center glass rounded-3xl p-10 md:p-14 mb-10">
+        <div class="flex flex-col items-center gap-4">
+          <span class="bg-sky-500/10 text-sky-400 px-4 py-1 rounded-full text-sm font-medium">
+            Josué Jacome
+          </span>
+
+          <h1 class="text-3xl md:text-5xl font-bold leading-tight">
+            Deber 3: <span class="gradient-text">POO</span>
+          </h1>
+
+          <p class="text-gray-400 max-w-2xl">
+            Objetivo: Desarrollar una página web explicando los conceptos fundamentales de la
+            <b>Programación Orientada a Objetos</b>.
+          </p>
+
+          <a href="../index.html"
+             class="glass px-6 py-3 rounded-xl font-bold hover:bg-white/5 transition">
+            ⬅ Volver al inicio
+          </a>
+        </div>
+      </section>
+
+      <!-- CONTENIDO -->
+      <section class="grid gap-6">
+
+        <!-- ACTIVIDADES -->
+        <div class="glass p-6 rounded-3xl">
+          <h2 class="text-2xl font-bold mb-2">📋 Actividades a realizar</h2>
+          <ul class="text-gray-300 list-disc pl-6 space-y-2 mt-4">
+            <li>Explicar los 4 pilares de POO (Encapsulamiento, Herencia, Polimorfismo, Abstracción).</li>
+            <li>Definir qué son clases y objetos.</li>
+            <li>Mostrar ejemplos de código.</li>
+            <li>Realizar dos ejercicios prácticos aplicando POO.</li>
+            <li>Grabar video explicando cómo resolviste cada ejercicio (con cámara encendida).</li>
+            <li>Subir el video e incrustarlo en esta página.</li>
+          </ul>
+
+          <div class="mt-5 glass p-4 rounded-2xl">
+            <p class="text-gray-300">
+              💡 <b>Importante:</b> Explica claramente tu proceso de pensamiento para modelar el problema
+              usando <b>objetos</b> (qué objeto existe, qué datos tiene y qué acciones realiza).
+            </p>
+          </div>
+        </div>
+
+        <!-- 1) CLASES Y OBJETOS -->
+        <div class="glass p-6 rounded-3xl">
+          <h2 class="text-2xl font-bold mb-3">1) ¿Qué son clases y objetos?</h2>
+
+          <p class="text-gray-300 leading-relaxed">
+            En POO, una <b>clase</b> es como un <b>molde</b> o plantilla que define cómo será algo
+            (sus datos y sus acciones).  
+            Un <b>objeto</b> es una <b>instancia</b> de esa clase (es decir, un “ejemplar” real creado con ese molde).
+          </p>
+
+          <div class="mt-4 grid md:grid-cols-2 gap-4">
+            <div class="glass p-5 rounded-2xl">
+              <h3 class="font-bold mb-1">📌 Clase</h3>
+              <p class="text-gray-300 text-sm">
+                Define <b>atributos</b> (datos) y <b>métodos</b> (acciones).
+              </p>
+            </div>
+            <div class="glass p-5 rounded-2xl">
+              <h3 class="font-bold mb-1">✅ Objeto</h3>
+              <p class="text-gray-300 text-sm">
+                Es lo que se crea a partir de la clase y se usa en el programa.
+              </p>
+            </div>
+          </div>
+
+          <p class="text-gray-400 text-sm mt-4 mb-2">Ejemplo rápido en JavaScript (Clase y Objeto):</p>
+          <pre class="glass p-4 rounded-2xl text-sky-200 text-sm overflow-auto"><code>class Persona {
+  constructor(nombre, edad) {
+    this.nombre = nombre;
+    this.edad = edad;
+  }
+
+  presentarse() {
+    return "Hola, soy " + this.nombre + " y tengo " + this.edad + " años.";
+  }
+}
+
+const p1 = new Persona("Josué", 18);
+console.log(p1.presentarse());</code></pre>
+        </div>
+
+        <!-- 2) 4 PILARES -->
+        <div class="glass p-6 rounded-3xl">
+          <h2 class="text-2xl font-bold mb-3">2) Los 4 pilares de la POO</h2>
+
+          <div class="grid md:grid-cols-2 gap-5 mt-4">
+
+            <!-- Encapsulamiento -->
+            <div class="glass p-5 rounded-2xl hover:border-sky-500/50 transition">
+              <h3 class="text-xl font-bold">2.1 Encapsulamiento</h3>
+              <p class="text-gray-300 mt-2 text-sm">
+                Consiste en <b>proteger</b> los datos del objeto y permitir acceso solo mediante métodos.
+                (Ej: getters y setters).
+              </p>
+              <pre class="glass p-4 rounded-2xl text-sky-200 text-sm overflow-auto mt-3"><code>class Cuenta {
+  #saldo = 0; // privado
+
+  depositar(monto) { this.#saldo += monto; }
+  verSaldo() { return this.#saldo; }
+}</code></pre>
+            </div>
+
+            <!-- Abstracción -->
+            <div class="glass p-5 rounded-2xl hover:border-indigo-500/50 transition">
+              <h3 class="text-xl font-bold">2.2 Abstracción</h3>
+              <p class="text-gray-300 mt-2 text-sm">
+                Es quedarse con lo <b>importante</b> del problema y ocultar detalles innecesarios.
+                (Modelar lo esencial).
+              </p>
+              <pre class="glass p-4 rounded-2xl text-sky-200 text-sm overflow-auto mt-3"><code>// Abstraemos un "Auto" con lo esencial:
+class Auto {
+  constructor(marca) { this.marca = marca; }
+  encender() { return "Auto encendido"; }
+}</code></pre>
+            </div>
+
+            <!-- Herencia -->
+            <div class="glass p-5 rounded-2xl hover:border-emerald-500/50 transition">
+              <h3 class="text-xl font-bold">2.3 Herencia</h3>
+              <p class="text-gray-300 mt-2 text-sm">
+                Una clase puede <b>heredar</b> atributos y métodos de otra. Así se reutiliza código.
+              </p>
+              <pre class="glass p-4 rounded-2xl text-sky-200 text-sm overflow-auto mt-3"><code>class Animal {
+  hacerSonido() { return "Sonido"; }
+}
+
+class Perro extends Animal {
+  hacerSonido() { return "Guau"; }
+}</code></pre>
+            </div>
+
+            <!-- Polimorfismo -->
+            <div class="glass p-5 rounded-2xl hover:border-pink-500/50 transition">
+              <h3 class="text-xl font-bold">2.4 Polimorfismo</h3>
+              <p class="text-gray-300 mt-2 text-sm">
+                Un mismo método puede comportarse de forma distinta dependiendo del objeto.
+              </p>
+              <pre class="glass p-4 rounded-2xl text-sky-200 text-sm overflow-auto mt-3"><code>const animales = [new Animal(), new Perro()];
+animales.forEach(a => console.log(a.hacerSonido()));</code></pre>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- 3) EJERCICIOS PRÁCTICOS -->
+        <div class="glass p-6 rounded-3xl">
+          <h2 class="text-2xl font-bold mb-3">3) Ejercicios prácticos aplicando POO</h2>
+          <p class="text-gray-300">
+            En estos ejercicios, la idea es mostrar tu <b>razonamiento</b>: identificar objetos, atributos y métodos.
+          </p>
+
+          <!-- Ejercicio 1 -->
+          <div class="mt-5 glass p-5 rounded-2xl">
+            <h3 class="text-xl font-bold">✅ Ejercicio 1: Sistema de Estudiante</h3>
+            <p class="text-gray-300 mt-2">
+
+
+            <p class="text-gray-400 text-sm mt-4 mb-2">Código:</p>
+            <pre class="glass p-4 rounded-2xl text-sky-200 text-sm overflow-auto"><code>class Estudiante {
+  constructor(nombre, notas) {
+    this.nombre = nombre;
+    this.notas = notas; // arreglo
+  }
+
+  promedio() {
+    let suma = 0;
+    for (let n of this.notas) suma += n;
+    return suma / this.notas.length;
+  }
+
+  estado() {
+    return this.promedio() >= 7 ? "Aprobado" : "Reprobado";
+  }
+}
+
+const e1 = new Estudiante("Josué", [8, 7, 9]);
+console.log("Promedio:", e1.promedio());
+console.log("Estado:", e1.estado());</code></pre>
+          </div>
+
+          <!-- Ejercicio 2 -->
+          <div class="mt-5 glass p-5 rounded-2xl">
+            <h3 class="text-xl font-bold">✅ Ejercicio 2: Cuenta Bancaria (Encapsulamiento)</h3>
+            <p class="text-gray-300 mt-2">
+              <b>Problema:</b> Crear una clase <b>CuentaBancaria</b> con saldo privado y métodos:
+              <b>depositar()</b>, <b>retirar()</b> y <b>verSaldo()</b>.
+            </p>
+
+            <div class="mt-4 glass p-4 rounded-2xl">
+              <p class="text-gray-300"><b>Proceso de pensamiento (para tu video):</b></p>
+              <ol class="list-decimal pl-6 text-gray-300 space-y-1 mt-2">
+                <li>Objeto: <b>CuentaBancaria</b>.</li>
+                <li>Dato importante: saldo (debe estar protegido).</li>
+                <li>Acciones: depositar, retirar, consultar saldo.</li>
+              </ol>
+            </div>
+
+            <p class="text-gray-400 text-sm mt-4 mb-2">Código:</p>
+            <pre class="glass p-4 rounded-2xl text-sky-200 text-sm overflow-auto"><code>class CuentaBancaria {
+  #saldo;
+
+  constructor(saldoInicial) {
+    this.#saldo = saldoInicial;
+  }
+
+  depositar(monto) {
+    if (monto > 0) this.#saldo += monto;
+  }
+
+  retirar(monto) {
+    if (monto > 0 && monto <= this.#saldo) {
+      this.#saldo -= monto;
+      return "Retiro exitoso";
+    }
+    return "No se puede retirar";
+  }
+
+  verSaldo() {
+    return this.#saldo;
+  }
+}
+
+const cuenta = new CuentaBancaria(50);
+cuenta.depositar(25);
+console.log("Saldo:", cuenta.verSaldo());
+console.log(cuenta.retirar(40));
+console.log("Saldo final:", cuenta.verSaldo());</code></pre>
+          </div>
+        </div>
+
+        <!-- 4) VIDEO -->
+        <div class="glass p-6 rounded-3xl">
+          <h2 class="text-2xl font-bold mb-3">4) Video explicativo</h2>
+          <p class="text-gray-300">
+            Graba tu video (cámara encendida) explicando cómo resolviste cada ejercicio y pégalo aquí.
+          </p>
+
+          <div class="mt-4 glass p-4 rounded-2xl">
+            <p class="text-gray-400 text-sm">
+              🎥 Pega el enlace de incrustación (embed) en el <b>src</b> del iframe.
+              Ejemplo: <b>https://www.youtube.com/embed/ID_DEL_VIDEO</b>
+            </p>
+
+            <div class="mt-4 rounded-2xl overflow-hidden border border-white/10">
+              <iframe
+                class="w-full h-64 md:h-96"
+                src="PEGAR_AQUI_TU_LINK_EMBED"
+                title="Video Deber 3"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+              </iframe>
+            </div>
+          </div>
+        </div>
+
+        <!-- BOTÓN FINAL -->
+        <div class="text-center">
+          <a href="../index.html"
+             class="glass px-8 py-3 rounded-xl font-bold hover:bg-white/5 transition inline-block">
+            ⬅ Volver al inicio
+          </a>
+        </div>
+
+      </section>
+
+    </div>
   </main>
 
-  <footer class="footer">
-    <p>Hecho para tu proyecto</p>
-  </footer>
 </body>
 </html>
