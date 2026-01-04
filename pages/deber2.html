@@ -3,30 +3,208 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Deber 2</title>
-  <link rel="stylesheet" href="../css/style.css" />
-</head>
-<body>
-  <header class="topbar">
-    <div class="brand">
-      <div class="logo">V</div>
-      <div>
-        <h1>Deber 2</h1>
-        <p class="subtitle">Contenido del deber</p>
-      </div>
-    </div>
-  </header>
+  <title>Deber 2 - Funciones</title>
 
-  <main class="container">
-    <section class="card">
-      <h2>Deber 2</h2>
-      <p>Aquí puedes escribir el contenido de tu deber.</p>
-      <a class="btn" href="../index.html">⬅ Volver al inicio</a>
-    </section>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: #0f172a;
+      color: white;
+    }
+    .glass {
+      background: rgba(255, 255, 255, 0.03);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .gradient-text {
+      background: linear-gradient(90deg, #38bdf8, #818cf8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .blob {
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      background: #38bdf8;
+      filter: blur(80px);
+      opacity: 0.2;
+      z-index: -1;
+    }
+    pre {
+      white-space: pre-wrap;
+      word-wrap: break-word;
+    }
+  </style>
+</head>
+
+<body class="overflow-x-hidden relative">
+
+  <!-- blobs decorativos -->
+  <div class="blob top-0 left-0"></div>
+  <div class="blob bottom-0 right-0" style="background:#818cf8;"></div>
+
+  <main class="min-h-screen flex items-center justify-center px-6 py-14">
+    <div class="w-full max-w-5xl">
+
+      <!-- ENCABEZADO -->
+      <section class="text-center glass rounded-3xl p-10 md:p-14 mb-10">
+        <div class="flex flex-col items-center gap-4">
+          <span class="bg-sky-500/10 text-sky-400 px-4 py-1 rounded-full text-sm font-medium">
+            Josué Jacome
+          </span>
+
+          <h1 class="text-3xl md:text-5xl font-bold leading-tight">
+            Deber 2: <span class="gradient-text">Funciones</span>
+          </h1>
+
+          <p class="text-gray-400 max-w-2xl">
+            Objetivo: Crear una página web explicando la teoría de funciones con ejemplos prácticos e imágenes ilustrativas.
+          </p>
+
+          <a href="../index.html"
+             class="glass px-6 py-3 rounded-xl font-bold hover:bg-white/5 transition">
+            ⬅ Volver al inicio
+          </a>
+        </div>
+      </section>
+
+      <!-- CONTENIDO -->
+      <section class="grid gap-6">
+
+        <!-- ACTIVIDADES -->
+        <div class="glass p-6 rounded-3xl">
+          <h2 class="text-2xl font-bold mb-2">📋 Actividades a realizar</h2>
+          <ul class="text-gray-300 list-disc pl-6 space-y-2 mt-4">
+            <li>Explicar qué son las funciones en programación.</li>
+            <li>Mostrar ejemplos de diferentes tipos de funciones.</li>
+            <li>Incluir imágenes explicativas y diagramas.</li>
+            <li>Realizar dos ejercicios prácticos.</li>
+            <li>Grabar un video explicando el paso a paso de cada ejercicio.</li>
+            <li>Incrustar el video en la página.</li>
+          </ul>
+
+          <div class="mt-5 glass p-4 rounded-2xl">
+            <p class="text-gray-300">
+              💡 <b>Tip:</b> Explica claramente los <b>parámetros</b>, el <b>valor de retorno</b> y el
+              <b>scope</b> (alcance) de las variables.
+            </p>
+          </div>
+        </div>
+
+        <!-- 1) QUÉ SON LAS FUNCIONES -->
+        <div class="glass p-6 rounded-3xl">
+          <h2 class="text-2xl font-bold mb-3">1) ¿Qué son las funciones en programación?</h2>
+          <p class="text-gray-300 leading-relaxed">
+            Una <b>función</b> es un bloque de código reutilizable que permite ejecutar una tarea específica.
+            Las funciones reciben datos llamados <b>parámetros</b>, realizan un proceso y pueden devolver
+            un <b>valor de retorno</b>.
+          </p>
+
+          <!-- IMAGEN 1 -->
+          <div class="mt-6 glass p-6 rounded-2xl border border-white/10">
+            <p class="text-gray-200 font-bold mb-3">🖼️ Diagrama de una función</p>
+
+            <img
+              src="imagenes/imagen11.jpg"
+              alt="Diagrama de función con parámetros, proceso y retorno"
+              class="w-full max-h-64 object-contain rounded-2xl"
+            />
+
+            <p class="text-gray-400 text-sm mt-3">
+              El diagrama muestra cómo una función recibe <b>parámetros</b>, ejecuta un
+              <b>proceso</b> interno y devuelve un <b>valor de retorno</b>.
+            </p>
+          </div>
+        </div>
+
+        <!-- 2) TIPOS DE FUNCIONES -->
+        <div class="glass p-6 rounded-3xl">
+          <h2 class="text-2xl font-bold mb-3">2) Tipos de funciones</h2>
+
+          <!-- Declarada -->
+          <div class="mt-4 glass p-5 rounded-2xl">
+            <h3 class="text-xl font-bold">2.1 Función declarada</h3>
+            <pre class="glass p-4 rounded-2xl text-sky-200 text-sm overflow-auto"><code>function saludar(nombre) {
+  return "Hola " + nombre;
+}</code></pre>
+          </div>
+
+          <!-- Flecha -->
+          <div class="mt-4 glass p-5 rounded-2xl">
+            <h3 class="text-xl font-bold">2.2 Función flecha</h3>
+            <pre class="glass p-4 rounded-2xl text-sky-200 text-sm overflow-auto"><code>const sumar = (a, b) => {
+  return a + b;
+}</code></pre>
+          </div>
+
+          <!-- IMAGEN 2 -->
+          <div class="mt-6 glass p-6 rounded-2xl border border-white/10">
+            <p class="text-gray-200 font-bold mb-3">🖼️ Scope de las variables</p>
+
+            <img
+              src="imagenes/imagen2.jpg"
+              alt="Diagrama de scope global, de función y de bloque"
+              class="w-full max-h-64 object-contain rounded-2xl"
+            />
+
+            <p class="text-gray-400 text-sm mt-3">
+              La imagen representa el <b>scope global</b>, el <b>scope de función</b> y el
+              <b>scope de bloque</b>, mostrando dónde existen las variables.
+            </p>
+          </div>
+        </div>
+
+        <!-- 3) EJERCICIOS -->
+        <div class="glass p-6 rounded-3xl">
+          <h2 class="text-2xl font-bold mb-3">3) Ejercicios prácticos</h2>
+
+          <!-- Ejercicio 1 -->
+          <div class="mt-4 glass p-5 rounded-2xl">
+            <h3 class="text-xl font-bold">Ejercicio 1: Área de un rectángulo</h3>
+            <pre class="glass p-4 rounded-2xl text-sky-200 text-sm overflow-auto"><code>function areaRectangulo(base, altura) {
+  return base * altura;
+}</code></pre>
+          </div>
+
+          <!-- Ejercicio 2 -->
+          <div class="mt-4 glass p-5 rounded-2xl">
+            <h3 class="text-xl font-bold">Ejercicio 2: Par o impar</h3>
+            <pre class="glass p-4 rounded-2xl text-sky-200 text-sm overflow-auto"><code>const parImpar = (n) => {
+  return (n % 2 === 0) ? "Par" : "Impar";
+}</code></pre>
+          </div>
+        </div>
+
+        <!-- VIDEO -->
+        <div class="glass p-6 rounded-3xl">
+          <h2 class="text-2xl font-bold mb-3">4) Video explicativo</h2>
+
+          <div class="mt-4 rounded-2xl overflow-hidden border border-white/10">
+            <iframe
+              class="w-full h-64 md:h-96"
+              src="PEGAR_AQUI_TU_LINK_EMBED"
+              title="Video Deber 2"
+              frameborder="0"
+              allowfullscreen>
+            </iframe>
+          </div>
+        </div>
+
+        <!-- BOTÓN FINAL -->
+        <div class="text-center">
+          <a href="../index.html"
+             class="glass px-8 py-3 rounded-xl font-bold hover:bg-white/5 transition inline-block">
+            ⬅ Volver al inicio
+          </a>
+        </div>
+
+      </section>
+
+    </div>
   </main>
 
-  <footer class="footer">
-    <p>Hecho para tu proyecto</p>
-  </footer>
 </body>
 </html>
