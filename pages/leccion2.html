@@ -3,30 +3,303 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Lección 2</title>
-  <link rel="stylesheet" href="../css/style.css" />
+  <title>Lección 2 - Figma: Herramientas de Diseño</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+
+  <style>
+    body { font-family: 'Plus Jakarta Sans', sans-serif; background:#0f172a; color:white; }
+    .glass { background: rgba(255,255,255,0.03); backdrop-filter: blur(10px); border:1px solid rgba(255,255,255,0.1); }
+    .gradient-text { background: linear-gradient(90deg,#38bdf8,#818cf8); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+    .blob { position:absolute; width:300px; height:300px; background:#38bdf8; filter:blur(80px); opacity:0.2; z-index:-1; }
+    pre { white-space: pre-wrap; word-wrap: break-word; }
+  </style>
 </head>
-<body>
-  <header class="topbar">
-    <div class="brand">
-      <div class="logo">V</div>
-      <div>
-        <h1>Lección 2</h1>
-        <p class="subtitle">Contenido de la lección</p>
-      </div>
+
+<body class="overflow-x-hidden relative">
+  <div class="blob top-0 left-0"></div>
+  <div class="blob bottom-0 right-0" style="background:#818cf8;"></div>
+
+  <main class="min-h-screen flex items-center justify-center px-6 py-14">
+    <div class="w-full max-w-5xl">
+
+      <!-- HEADER -->
+      <section class="text-center glass rounded-3xl p-10 md:p-14 mb-10">
+        <div class="flex flex-col items-center gap-4">
+          <span class="bg-sky-500/10 text-sky-400 px-4 py-1 rounded-full text-sm font-medium">
+            Josué Jacome
+          </span>
+
+          <h1 class="text-3xl md:text-5xl font-bold leading-tight">
+            Lección 2: <span class="gradient-text">Figma - Herramientas de Diseño</span>
+          </h1>
+
+          <p class="text-gray-400 max-w-3xl">
+            Objetivo: Crear una página web documentando los comandos más utilizados en Figma para el diseño de interfaces.
+          </p>
+
+          <a href="../index.html" class="glass px-6 py-3 rounded-xl font-bold hover:bg-white/5 transition">
+            ⬅ Volver al inicio
+          </a>
+        </div>
+      </section>
+
+      <!-- CONTENIDO -->
+      <section class="grid gap-6">
+
+        <!-- CONTENIDO A INCLUIR -->
+        <div class="glass p-6 rounded-3xl">
+          <h2 class="text-2xl font-bold mb-2">📋 Contenido a incluir</h2>
+          <ul class="text-gray-300 list-disc pl-6 space-y-2 mt-4">
+            <li>Herramientas de selección y manipulación</li>
+            <li>Herramientas de dibujo (formas, vectores, texto)</li>
+            <li>Comandos de alineación y distribución</li>
+            <li>Trabajo con componentes y estilos</li>
+            <li>Herramientas de prototipado</li>
+          </ul>
+
+          <div class="mt-5 glass p-4 rounded-2xl">
+            <p class="text-gray-300">
+              🎯 Para cada comando debes incluir: <b>qué hace</b>, <b>cuándo usarlo</b>, <b>captura de pantalla</b> y <b>un ejemplo práctico</b>.
+            </p>
+          </div>
+        </div>
+
+        <!-- 1) SELECCIÓN Y MANIPULACIÓN -->
+        <div class="glass p-6 rounded-3xl">
+          <h2 class="text-2xl font-bold mb-3">1) Herramientas de selección y manipulación</h2>
+
+          <!-- Move -->
+          <div class="mt-4 glass p-5 rounded-2xl">
+            <h3 class="text-xl font-bold">1.1 Move Tool (V) - Seleccionar y mover</h3>
+            <p class="text-gray-300 mt-2"><b>Qué hace:</b> Selecciona objetos y los mueve por el lienzo.</p>
+            <p class="text-gray-300 mt-2"><b>Cuándo usarlo:</b> Cuando necesitas ajustar posición, tamaño o mover elementos.</p>
+
+            <div class="mt-4 grid md:grid-cols-2 gap-4">
+              <div class="glass p-4 rounded-2xl">
+                <p class="text-gray-200 font-bold mb-2">📸 Captura</p>
+                <p class="text-gray-400 text-sm">Saca captura de: seleccionar un rectángulo y moverlo.</p>
+                <div class="mt-3 h-48 rounded-2xl bg-slate-800/70 flex items-center justify-center text-gray-400 text-sm">
+                  Pega tu captura aquí
+                </div>
+              </div>
+
+              <div class="glass p-4 rounded-2xl">
+                <p class="text-gray-200 font-bold mb-2">🧪 Ejemplo práctico</p>
+                <p class="text-gray-300 text-sm">
+                  Crea un botón (rectángulo + texto) y usa <b>V</b> para moverlo a una zona “header”.
+                </p>
+                <ul class="text-gray-300 text-sm list-disc pl-5 mt-2 space-y-1">
+                  <li>Dibuja un rectángulo</li>
+                  <li>Agrega texto encima</li>
+                  <li>Selecciona ambos y muévelos</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Scale -->
+          <div class="mt-4 glass p-5 rounded-2xl">
+            <h3 class="text-xl font-bold">1.2 Scale Tool (K) - Escalar</h3>
+            <p class="text-gray-300 mt-2"><b>Qué hace:</b> Escala un objeto proporcionalmente (tamaño) sin cambiar los valores manualmente.</p>
+            <p class="text-gray-300 mt-2"><b>Cuándo usarlo:</b> Para agrandar o reducir grupos (iconos, componentes, tarjetas) rápido.</p>
+
+            <div class="mt-4 glass p-4 rounded-2xl">
+              <p class="text-gray-200 font-bold mb-2">📸 Captura</p>
+              <p class="text-gray-400 text-sm">Saca captura usando K para escalar un componente o una tarjeta.</p>
+              <div class="mt-3 h-48 rounded-2xl bg-slate-800/70 flex items-center justify-center text-gray-400 text-sm">
+                Pega tu captura aquí
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2) DIBUJO: FORMAS, VECTORES, TEXTO -->
+        <div class="glass p-6 rounded-3xl">
+          <h2 class="text-2xl font-bold mb-3">2) Herramientas de dibujo (formas, vectores, texto)</h2>
+
+          <!-- Rectangle -->
+          <div class="mt-4 glass p-5 rounded-2xl">
+            <h3 class="text-xl font-bold">2.1 Rectangle (R) - Rectángulo</h3>
+            <p class="text-gray-300 mt-2"><b>Qué hace:</b> Crea rectángulos (base de botones, tarjetas, contenedores).</p>
+            <p class="text-gray-300 mt-2"><b>Cuándo usarlo:</b> Para crear botones, cards, fondos, inputs, etc.</p>
+
+            <div class="mt-4 glass p-4 rounded-2xl">
+              <p class="text-gray-200 font-bold mb-2">📸 Captura</p>
+              <p class="text-gray-400 text-sm">Saca captura creando un botón con R y redondeando esquinas.</p>
+              <div class="mt-3 h-48 rounded-2xl bg-slate-800/70 flex items-center justify-center text-gray-400 text-sm">
+                Pega tu captura aquí
+              </div>
+            </div>
+          </div>
+
+          <!-- Pen -->
+          <div class="mt-4 glass p-5 rounded-2xl">
+            <h3 class="text-xl font-bold">2.2 Pen (P) - Vector / Pluma</h3>
+            <p class="text-gray-300 mt-2"><b>Qué hace:</b> Crea formas personalizadas con nodos (vectores).</p>
+            <p class="text-gray-300 mt-2"><b>Cuándo usarlo:</b> Para diseñar íconos simples o formas únicas.</p>
+
+            <div class="mt-4 glass p-4 rounded-2xl">
+              <p class="text-gray-200 font-bold mb-2">📸 Captura</p>
+              <p class="text-gray-400 text-sm">Saca captura dibujando un ícono simple con P (ej: flecha).</p>
+              <div class="mt-3 h-48 rounded-2xl bg-slate-800/70 flex items-center justify-center text-gray-400 text-sm">
+                Pega tu captura aquí
+              </div>
+            </div>
+          </div>
+
+          <!-- Text -->
+          <div class="mt-4 glass p-5 rounded-2xl">
+            <h3 class="text-xl font-bold">2.3 Text (T) - Texto</h3>
+            <p class="text-gray-300 mt-2"><b>Qué hace:</b> Inserta texto (títulos, labels, párrafos).</p>
+            <p class="text-gray-300 mt-2"><b>Cuándo usarlo:</b> Para todo contenido textual de la interfaz.</p>
+
+            <div class="mt-4 glass p-4 rounded-2xl">
+              <p class="text-gray-200 font-bold mb-2">📸 Captura</p>
+              <p class="text-gray-400 text-sm">Saca captura creando un título con T y cambiando tamaño/weight.</p>
+              <div class="mt-3 h-48 rounded-2xl bg-slate-800/70 flex items-center justify-center text-gray-400 text-sm">
+                Pega tu captura aquí
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3) ALINEACIÓN Y DISTRIBUCIÓN -->
+        <div class="glass p-6 rounded-3xl">
+          <h2 class="text-2xl font-bold mb-3">3) Comandos de alineación y distribución</h2>
+
+          <div class="mt-4 glass p-5 rounded-2xl">
+            <h3 class="text-xl font-bold">3.1 Align (Alinear) - Panel superior</h3>
+            <p class="text-gray-300 mt-2"><b>Qué hace:</b> Alinea elementos (izquierda, centro, derecha, arriba, medio, abajo).</p>
+            <p class="text-gray-300 mt-2"><b>Cuándo usarlo:</b> Cuando quieres que varios elementos queden perfectamente alineados.</p>
+
+            <div class="mt-4 grid md:grid-cols-2 gap-4">
+              <div class="glass p-4 rounded-2xl">
+                <p class="text-gray-200 font-bold mb-2">📸 Captura</p>
+                <p class="text-gray-400 text-sm">Saca captura alineando 3 botones al centro.</p>
+                <div class="mt-3 h-48 rounded-2xl bg-slate-800/70 flex items-center justify-center text-gray-400 text-sm">
+                  Pega tu captura aquí
+                </div>
+              </div>
+
+              <div class="glass p-4 rounded-2xl">
+                <p class="text-gray-200 font-bold mb-2">🧪 Ejemplo práctico</p>
+                <p class="text-gray-300 text-sm">
+                  Crea 3 tarjetas y usa <b>Align center</b> para que queden perfectamente centradas.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-4 glass p-5 rounded-2xl">
+            <h3 class="text-xl font-bold">3.2 Distribute (Distribuir)</h3>
+            <p class="text-gray-300 mt-2"><b>Qué hace:</b> Reparte el espacio de forma uniforme entre objetos.</p>
+            <p class="text-gray-300 mt-2"><b>Cuándo usarlo:</b> Cuando tienes varios elementos y quieres que el espaciado sea igual.</p>
+
+            <div class="mt-4 glass p-4 rounded-2xl">
+              <p class="text-gray-200 font-bold mb-2">📸 Captura</p>
+              <p class="text-gray-400 text-sm">Saca captura distribuyendo 4 íconos con igual espacio.</p>
+              <div class="mt-3 h-48 rounded-2xl bg-slate-800/70 flex items-center justify-center text-gray-400 text-sm">
+                Pega tu captura aquí
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4) COMPONENTES Y ESTILOS -->
+        <div class="glass p-6 rounded-3xl">
+          <h2 class="text-2xl font-bold mb-3">4) Componentes y estilos</h2>
+
+          <div class="mt-4 glass p-5 rounded-2xl">
+            <h3 class="text-xl font-bold">4.1 Components (Crear componente)</h3>
+            <p class="text-gray-300 mt-2"><b>Qué hace:</b> Convierte un elemento en componente reutilizable.</p>
+            <p class="text-gray-300 mt-2"><b>Cuándo usarlo:</b> Cuando vas a repetir botones, cards, inputs, etc.</p>
+
+            <div class="mt-4 glass p-4 rounded-2xl">
+              <p class="text-gray-200 font-bold mb-2">📸 Captura</p>
+              <p class="text-gray-400 text-sm">Saca captura haciendo "Create component" a un botón.</p>
+              <div class="mt-3 h-48 rounded-2xl bg-slate-800/70 flex items-center justify-center text-gray-400 text-sm">
+                Pega tu captura aquí
+              </div>
+            </div>
+
+            <div class="mt-4 glass p-4 rounded-2xl">
+              <p class="text-gray-200 font-bold mb-2">🧪 Ejemplo práctico</p>
+              <p class="text-gray-300 text-sm">
+                Crea un botón “Primario” como componente y luego duplica 5 instancias.
+                Cambia el texto de cada instancia sin romper el diseño.
+              </p>
+            </div>
+          </div>
+
+          <div class="mt-4 glass p-5 rounded-2xl">
+            <h3 class="text-xl font-bold">4.2 Styles (Colores, Tipografía)</h3>
+            <p class="text-gray-300 mt-2"><b>Qué hace:</b> Guarda estilos para reutilizarlos y mantener consistencia.</p>
+            <p class="text-gray-300 mt-2"><b>Cuándo usarlo:</b> Cuando quieres que toda la app tenga el mismo estilo (branding).</p>
+
+            <div class="mt-4 glass p-4 rounded-2xl">
+              <p class="text-gray-200 font-bold mb-2">📸 Captura</p>
+              <p class="text-gray-400 text-sm">Saca captura guardando un estilo de color y aplicándolo a 3 elementos.</p>
+              <div class="mt-3 h-48 rounded-2xl bg-slate-800/70 flex items-center justify-center text-gray-400 text-sm">
+                Pega tu captura aquí
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5) PROTOTIPADO -->
+        <div class="glass p-6 rounded-3xl">
+          <h2 class="text-2xl font-bold mb-3">5) Herramientas de prototipado</h2>
+
+          <div class="mt-4 glass p-5 rounded-2xl">
+            <h3 class="text-xl font-bold">5.1 Prototype: Interactions (Click / Navigate)</h3>
+            <p class="text-gray-300 mt-2"><b>Qué hace:</b> Conecta pantallas y crea interacciones (click → navegar).</p>
+            <p class="text-gray-300 mt-2"><b>Cuándo usarlo:</b> Para simular una app real y probar flujo de pantallas.</p>
+
+            <div class="mt-4 grid md:grid-cols-2 gap-4">
+              <div class="glass p-4 rounded-2xl">
+                <p class="text-gray-200 font-bold mb-2">📸 Captura</p>
+                <p class="text-gray-400 text-sm">Saca captura conectando un botón de "Login" a la pantalla "Home".</p>
+                <div class="mt-3 h-48 rounded-2xl bg-slate-800/70 flex items-center justify-center text-gray-400 text-sm">
+                  Pega tu captura aquí
+                </div>
+              </div>
+
+              <div class="glass p-4 rounded-2xl">
+                <p class="text-gray-200 font-bold mb-2">🧪 Ejemplo práctico</p>
+                <p class="text-gray-300 text-sm">
+                  Crea 2 frames: “Login” y “Home”. En Prototype, selecciona el botón y pon:
+                  <b>On click → Navigate to Home</b>.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-4 glass p-5 rounded-2xl">
+            <h3 class="text-xl font-bold">5.2 Present (Reproducir prototipo)</h3>
+            <p class="text-gray-300 mt-2"><b>Qué hace:</b> Reproduce el prototipo como si fuera una aplicación real.</p>
+            <p class="text-gray-300 mt-2"><b>Cuándo usarlo:</b> Para mostrar tu diseño y testear la navegación.</p>
+
+            <div class="mt-4 glass p-4 rounded-2xl">
+              <p class="text-gray-200 font-bold mb-2">📸 Captura</p>
+              <p class="text-gray-400 text-sm">Saca captura del botón "Present" y la vista previa del prototipo.</p>
+              <div class="mt-3 h-48 rounded-2xl bg-slate-800/70 flex items-center justify-center text-gray-400 text-sm">
+                Pega tu captura aquí
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Botón final -->
+        <div class="text-center">
+          <a href="../index.html" class="glass px-8 py-3 rounded-xl font-bold hover:bg-white/5 transition inline-block">
+            ⬅ Volver al inicio
+          </a>
+        </div>
+
+      </section>
     </div>
-  </header>
-
-  <main class="container">
-    <section class="card">
-      <h2>Lección 2</h2>
-      <p>Aquí puedes poner teoría, ejercicios y resúmenes.</p>
-      <a class="btn" href="../index.html">⬅ Volver al inicio</a>
-    </section>
   </main>
-
-  <footer class="footer">
-    <p>Hecho para tu proyecto</p>
-  </footer>
 </body>
 </html>
