@@ -1,7 +1,5 @@
 # Programación Visual — Portafolio (2026)
 
-Portafolio web hecho con **HTML + TailwindCSS**, organizado por **deberes**, **lecciones** y **examen final**, publicado en **GitHub Pages**.
-
 ---
 
 ## ✅ Contenido del proyecto
