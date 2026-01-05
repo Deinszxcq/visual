@@ -65,21 +65,7 @@ Portafolio web hecho con **HTML + TailwindCSS**, organizado por **deberes**, **l
 ---
 
 ## 📝 Examen Final
-Página preparada para el **Examen Final**, siguiendo la misma estética del portafolio.
+
 
 ---
 
-## 🗂️ Estructura sugerida del proyecto
-
-```txt
-/
-├─ index.html
-└─ pages/
-   ├─ deber1.html
-   ├─ deber2.html
-   ├─ deber3.html
-   ├─ leccion1.html
-   ├─ leccion2.html
-   ├─ examenfinal.html
-   └─ imagenes/
-      ├─ (capturas figma y diagramas)
