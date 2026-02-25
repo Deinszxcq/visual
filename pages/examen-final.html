@@ -3,527 +3,102 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Examen Final - Programación Visual</title>
+  <title>Examen Final — Evidencias</title>
 
   <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
 
   <style>
     body {
       font-family: 'Plus Jakarta Sans', sans-serif;
-      background: #0f172a;
+      background: radial-gradient(circle at 20% 20%, #0f172a, #020617);
       color: white;
     }
+
     .glass {
-      background: rgba(255, 255, 255, 0.03);
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: rgba(255,255,255,0.04);
+      backdrop-filter: blur(14px);
+      border: 1px solid rgba(255,255,255,0.08);
     }
+
     .gradient-text {
       background: linear-gradient(90deg, #38bdf8, #818cf8);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
-    .blob {
-      position: absolute;
-      width: 300px;
-      height: 300px;
-      background: #38bdf8;
-      filter: blur(80px);
-      opacity: 0.2;
-      z-index: -1;
-    }
-    pre { white-space: pre-wrap; word-wrap: break-word; }
   </style>
 </head>
 
-<body class="overflow-x-hidden relative">
+<body class="min-h-screen flex items-center justify-center px-6 py-12">
 
-  <!-- blobs decorativos -->
-  <div class="blob top-0 left-0"></div>
-  <div class="blob bottom-0 right-0" style="background:#818cf8;"></div>
+  <main class="w-full max-w-5xl">
 
-  <main class="min-h-screen flex items-center justify-center px-6 py-14">
-    <div class="w-full max-w-5xl">
+    <!-- HEADER -->
+    <section class="glass rounded-3xl p-10 md:p-14 text-center mb-10">
+      <span class="bg-sky-500/10 text-sky-400 px-4 py-1 rounded-full text-sm font-semibold">
+        Josué Jacome
+      </span>
 
-      <!-- ENCABEZADO -->
-      <section class="text-center glass rounded-3xl p-10 md:p-14 mb-10">
-        <div class="flex flex-col items-center gap-4">
-          <span class="bg-sky-500/10 text-sky-400 px-4 py-1 rounded-full text-sm font-medium">
-            Josué Jacome
-          </span>
+      <h1 class="text-3xl md:text-5xl font-bold mt-4">
+        Evidencias del <span class="gradient-text">Examen Final</span>
+      </h1>
 
-          <h1 class="text-3xl md:text-5xl font-bold leading-tight">
-            Examen Final: <span class="gradient-text">Sistema para Consultorio Médico</span>
-          </h1>
+      <p class="text-gray-400 mt-4 max-w-2xl mx-auto">
+        Sistema para consultorio médico — documentación de la reunión inicial y comprobante de pago del proyecto.
+      </p>
+    </section>
 
-          <p class="text-gray-400 max-w-3xl">
-            Proyecto enfocado en mejorar el manejo de pacientes y datos clínicos de un consultorio que actualmente
-            trabaja con Excel y métodos manuales.
-          </p>
+    <!-- EVIDENCIAS -->
+    <section class="grid md:grid-cols-2 gap-8">
 
-          <a href="../index.html"
-             class="glass px-6 py-3 rounded-xl font-bold hover:bg-white/5 transition">
-            ⬅ Volver al inicio
-          </a>
-        </div>
-      </section>
+      <!-- VIDEO -->
+      <div class="glass rounded-3xl p-6">
+        <h2 class="text-xl font-bold mb-4 flex items-center gap-2">
+          🎥 Video de la reunión
+        </h2>
 
-      <!-- CONTENIDO -->
-      <section class="grid gap-6">
-
-        <!-- 1) FASES DEL PROYECTO -->
-        <div class="glass p-6 rounded-3xl">
-          <h2 class="text-2xl font-bold mb-2">📱 Fases del Proyecto</h2>
-          <p class="text-gray-400">
-            A continuación se documenta el proceso desde el contacto inicial hasta el diseño de la solución.
-          </p>
+        <div class="w-full aspect-video rounded-2xl overflow-hidden border border-white/10 bg-black">
+          <iframe
+            src="https://drive.google.com/file/d/1s-xdteLxeoJY61-PgDuQRGoBdClDxwWO/preview"
+            class="w-full h-full"
+            allow="autoplay">
+          </iframe>
         </div>
 
-        <!-- 1.1 Contacto inicial -->
-        <div class="glass p-6 rounded-3xl">
-          <h2 class="text-2xl font-bold mb-3">1) Contacto inicial con el cliente</h2>
-          <p class="text-gray-300 leading-relaxed">
-            Se contactó con un <b>consultorio médico ubicado en Calderón</b>, el cual aún maneja toda su base de datos
-            y clientes por medio de <b>Excel</b> y programas anticuados. Se preguntó qué problemas han tenido y si les
-            gustaría un mejor programa para organizar todo lo relacionado con eso.
-          </p>
-        </div>
-
-        <!-- 1.2 Primera reunión (espacio captura) -->
-        <div class="glass p-6 rounded-3xl">
-          <h2 class="text-2xl font-bold mb-3">2) Realizar la primera reunión</h2>
-          <p class="text-gray-300 mb-4">
-            Se realizó una primera reunión con el consultorio para conocer su situación actual y entender el problema.
-          </p>
-
-<!-- ESPACIO PARA CAPTURA -->
-<div class="glass p-4 rounded-2xl border border-white/10">
-  <p class="text-gray-200 font-bold mb-3">🖼️ Captura de pantalla (Reunión)</p>
-
-  <img
-    src="imagenes/reunion.png"
-    alt="Captura de pantalla de la primera reunión con el consultorio"
-    class="w-full max-h-72 object-contain rounded-2xl border border-white/10 bg-slate-900/40"
-  />
-
-  <p class="text-gray-400 text-sm mt-3">
-    Captura de la primera reunión donde se levantó información del consultorio y su problema con Excel.
-  </p>
-</div>
-
-        <!-- 1.3 Escuchar necesidades -->
-        <div class="glass p-6 rounded-3xl">
-          <h2 class="text-2xl font-bold mb-3">3) Escuchar qué necesita y por qué</h2>
-          <p class="text-gray-300 leading-relaxed">
-            El consultorio tiene problemas con su base de datos de clientes: muchos datos se pierden, algunas veces se anotan
-            en papeles y luego se pierden. Además, los archivos de Excel se pueden borrar o perder con facilidad, lo cual
-            <b>no es eficiente</b>. Buscan una solución que sea <b>fácil de entender</b>, sin muchas complicaciones para implementar,
-            que permita migrar lo que ya tienen y que también ayude a los clientes a tener <b>números de contacto</b> y
-            facilidades de comunicación con la doctora.
-          </p>
-
-          <div class="mt-4 grid md:grid-cols-2 gap-4">
-            <div class="glass p-4 rounded-2xl">
-              <h3 class="font-bold mb-1">🚨 Problemas actuales</h3>
-              <ul class="text-gray-300 text-sm list-disc pl-5 space-y-1">
-                <li>Pérdida de información (papeles / Excel)</li>
-                <li>Duplicación o inconsistencia de datos</li>
-                <li>Dificultad para buscar historial del paciente</li>
-                <li>Organización manual y lenta</li>
-              </ul>
-            </div>
-            <div class="glass p-4 rounded-2xl">
-              <h3 class="font-bold mb-1">🎯 Objetivo de la solución</h3>
-              <ul class="text-gray-300 text-sm list-disc pl-5 space-y-1">
-                <li>Sistema centralizado y seguro</li>
-                <li>Registro claro y rápido</li>
-                <li>Historial médico ordenado</li>
-                <li>Contacto sencillo con el consultorio</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <!-- 1.4 Preguntas (10) -->
-        <div class="glass p-6 rounded-3xl">
-          <h2 class="text-2xl font-bold mb-3">4) Hacer preguntas para entender el problema</h2>
-          <p class="text-gray-300 mb-4">
-            Preguntas realizadas para levantar información (se dejan sin respuesta).
-          </p>
-
-          <ol class="text-gray-300 list-decimal pl-6 space-y-2">
-            <li>¿Cuántos pacientes atienden mensualmente en promedio?</li>
-            <li>¿Cuántos pacientes nuevos registran por semana?</li>
-            <li>¿Qué datos guardan actualmente en su base de Excel (campos)?</li>
-            <li>¿Cuántos registros (filas) tiene la base de datos actual aproximadamente?</li>
-            <li>¿Con qué frecuencia se pierde información o se duplican datos?</li>
-            <li>¿Quiénes tienen acceso a los archivos de Excel actualmente?</li>
-            <li>¿Cómo registran pagos (depósitos) y cómo verifican esos datos?</li>
-            <li>¿Qué tipo de consultas realizan (general, radiografías, etc.) y qué información necesitan guardar?</li>
-            <li>¿Qué problemas han tenido al buscar historiales de pacientes antiguos?</li>
-            <li>¿Necesitan reportes (por fecha, por paciente, por ingresos) y cuáles serían los más importantes?</li>
-          </ol>
-        </div>
-
-        <!-- 1.5 Levantamiento de requisitos -->
-        <div class="glass p-6 rounded-3xl">
-          <h2 class="text-2xl font-bold mb-3">5) Levantamiento de requisitos</h2>
-          <p class="text-gray-300 mb-4">
-            Con base en los problemas identificados, se levantan los siguientes requisitos:
-          </p>
-
-          <div class="grid md:grid-cols-2 gap-4">
-            <div class="glass p-5 rounded-2xl">
-              <h3 class="text-xl font-bold">✅ Requisitos funcionales</h3>
-              <ul class="text-gray-300 text-sm list-disc pl-5 space-y-1 mt-2">
-                <li>Registrar pacientes (crear, editar, eliminar).</li>
-                <li>Buscar pacientes por nombre, cédula o teléfono.</li>
-                <li>Guardar historial de consultas y motivo de visita.</li>
-                <li>Registrar pagos/depósitos por consulta.</li>
-                <li>Agendar citas y ver agenda por día.</li>
-                <li>Exportar o respaldar la información (para evitar pérdidas).</li>
-                <li>Mostrar información de contacto del consultorio a los pacientes.</li>
-              </ul>
-            </div>
-
-            <div class="glass p-5 rounded-2xl">
-              <h3 class="text-xl font-bold">⭐ Requisitos no funcionales</h3>
-              <ul class="text-gray-300 text-sm list-disc pl-5 space-y-1 mt-2">
-                <li>Interfaz simple y fácil de entender.</li>
-                <li>Seguridad: acceso con credenciales (llave maestra para administración).</li>
-                <li>Respaldo automático o manual de base de datos.</li>
-                <li>Rápido acceso a datos (búsqueda eficiente).</li>
-                <li>Compatibilidad web (PC / celular).</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <!-- 1.6 Usuarios -->
-        <div class="glass p-6 rounded-3xl">
-          <h2 class="text-2xl font-bold mb-3">6) Identificar usuarios del sistema</h2>
-
-          <div class="grid md:grid-cols-2 gap-4">
-            <div class="glass p-5 rounded-2xl">
-              <h3 class="font-bold mb-1">👩‍⚕️ Personal del consultorio</h3>
-              <p class="text-gray-300 text-sm">
-                Doctora / asistente encargada de registrar pacientes, consultas y pagos.
-              </p>
-            </div>
-            <div class="glass p-5 rounded-2xl">
-              <h3 class="font-bold mb-1">🧑‍🤝‍🧑 Pacientes</h3>
-              <p class="text-gray-300 text-sm">
-                Personas que se quieren atender en una cita médica (consulta, radiografías, etc.).
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <!-- 1.7 Funciones -->
-        <div class="glass p-6 rounded-3xl">
-          <h2 class="text-2xl font-bold mb-3">7) Definir funciones principales y secundarias</h2>
-
-          <div class="grid md:grid-cols-2 gap-4">
-            <div class="glass p-5 rounded-2xl">
-              <h3 class="text-xl font-bold">✅ Funciones principales</h3>
-              <ul class="text-gray-300 text-sm list-disc pl-5 space-y-1 mt-2">
-                <li>Registro de pacientes y datos básicos.</li>
-                <li>Base de datos interna para consultas e historial.</li>
-                <li>Búsqueda rápida de pacientes.</li>
-                <li>Registro de pagos/depósitos.</li>
-              </ul>
-            </div>
-
-            <div class="glass p-5 rounded-2xl">
-              <h3 class="text-xl font-bold">⭐ Funciones secundarias</h3>
-              <ul class="text-gray-300 text-sm list-disc pl-5 space-y-1 mt-2">
-                <li>Sección pública para que las personas contacten con la doctora.</li>
-                <li>Agenda de citas por día/semana.</li>
-                <li>Exportación y respaldo en archivo (seguridad).</li>
-                <li>Reporte simple (ingresos / pacientes atendidos).</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <!-- 1.8 Pantallas -->
-        <div class="glass p-6 rounded-3xl">
-          <h2 class="text-2xl font-bold mb-3">8) Especificar pantallas necesarias</h2>
-
-          <ul class="text-gray-300 list-disc pl-6 space-y-2">
-            <li><b>Página web pública:</b> información del consultorio + contacto.</li>
-            <li><b>Pantalla de registro de pacientes:</b> formulario para crear/editar.</li>
-            <li><b>Panel interno:</b> lista de pacientes, historial y pagos.</li>
-            <li><b>Acceso administrador:</b> “llave maestra” para ver/gestionar todo.</li>
-          </ul>
-        </div>
-
-        <!-- 1.9 Datos a guardar -->
-        <div class="glass p-6 rounded-3xl">
-          <h2 class="text-2xl font-bold mb-3">9) Determinar qué datos se guardarán</h2>
-
-          <div class="glass p-5 rounded-2xl">
-            <h3 class="font-bold mb-2">📦 Datos del paciente y consulta</h3>
-            <ul class="text-gray-300 text-sm list-disc pl-5 space-y-1">
-              <li>Nombres y apellidos</li>
-              <li>Cédula / Identificación</li>
-              <li>Teléfono y/o WhatsApp</li>
-              <li>Dirección (opcional)</li>
-              <li>Fecha de consulta / cita</li>
-              <li>Motivo de visita / diagnóstico (según el consultorio)</li>
-              <li>Tratamiento / observaciones</li>
-              <li>Depósito / pago realizado</li>
-              <li>Historial de visitas (para futuras consultas)</li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- 1.10 Restricciones -->
-        <div class="glass p-6 rounded-3xl">
-          <h2 class="text-2xl font-bold mb-3">10) Establecer restricciones</h2>
-          <ul class="text-gray-300 list-disc pl-6 space-y-2">
-            <li><b>Privacidad:</b> solo personal autorizado puede ver datos sensibles.</li>
-            <li><b>Acceso:</b> panel interno protegido con usuario/contraseña y llave maestra.</li>
-            <li><b>Respaldo:</b> debe existir copia de seguridad para evitar pérdida de información.</li>
-            <li><b>Integridad:</b> evitar registros duplicados (por cédula o teléfono).</li>
-            <li><b>Usabilidad:</b> debe ser simple para personal no técnico.</li>
-            <li><b>Disponibilidad:</b> el sistema debe funcionar incluso con internet inestable (modo simple o respaldo local si se implementa).</li>
-          </ul>
-        </div>
-
-        <!-- 2) ANÁLISIS DEL PROBLEMA -->
-        <div class="glass p-6 rounded-3xl">
-          <h2 class="text-2xl font-bold mb-3">📌 Análisis del problema</h2>
-          <p class="text-gray-300">
-            Se analizan procesos actuales, reglas del negocio y representación visual del flujo.
-          </p>
-        </div>
-
-        <!-- 2.1 Procesos y reglas -->
-        <div class="glass p-6 rounded-3xl">
-          <h2 class="text-2xl font-bold mb-3">11) Definir procesos y reglas de negocio</h2>
-
-          <div class="glass p-5 rounded-2xl">
-            <h3 class="font-bold mb-2">🔁 Procesos principales</h3>
-            <ol class="text-gray-300 text-sm list-decimal pl-6 space-y-1">
-              <li>Registro o búsqueda del paciente.</li>
-              <li>Agendamiento o confirmación de cita.</li>
-              <li>Registro de consulta (motivo, observación, tratamiento).</li>
-              <li>Registro de pago/depósito.</li>
-              <li>Generación de historial y seguimiento.</li>
-              <li>Respaldo periódico de información.</li>
-            </ol>
-          </div>
-
-          <div class="mt-4 glass p-5 rounded-2xl">
-            <h3 class="font-bold mb-2">📏 Reglas de negocio</h3>
-            <ul class="text-gray-300 text-sm list-disc pl-5 space-y-1">
-              <li>No se puede registrar una consulta sin paciente registrado.</li>
-              <li>La cédula debe ser única por paciente (evitar duplicados).</li>
-              <li>Todo pago debe estar asociado a una consulta o cita.</li>
-              <li>Solo el administrador puede eliminar registros.</li>
-              <li>Las ediciones deben quedar registradas (quién y cuándo) si se implementa auditoría.</li>
-            </ul>
-          </div>
-        </div>
-
-<!-- 2.2 Diagrama de flujo (espacio) -->
-<div class="glass p-6 rounded-3xl">
-  <h2 class="text-2xl font-bold mb-3">12) Crear diagramas de flujo</h2>
-
-  <div class="glass p-4 rounded-2xl border border-white/10">
-    <p class="text-gray-200 font-bold mb-3">🖼️ Diagrama de flujo (Proceso de atención)</p>
-
-    <img
-      src="imagenes/1.webp"
-      alt="Diagrama de flujo del proceso de atención médica"
-      class="w-full max-h-72 object-contain rounded-2xl border border-white/10 bg-slate-900/40"
-    />
-
-    <p class="text-gray-400 text-sm mt-3">
-     
-    </p>
-  </div>
-</div>
-
-
-        <!-- 2.3 Casos de uso -->
-        <div class="glass p-6 rounded-3xl">
-          <h2 class="text-2xl font-bold mb-3">13) Desarrollar casos de uso</h2>
-
-          <div class="grid gap-4">
-            <div class="glass p-5 rounded-2xl">
-              <h3 class="text-xl font-bold">CU01 — Registrar paciente</h3>
-              <p class="text-gray-300 text-sm mt-2"><b>Actor:</b> Personal del consultorio</p>
-              <p class="text-gray-300 text-sm"><b>Precondición:</b> Personal autenticado.</p>
-              <p class="text-gray-300 text-sm"><b>Flujo principal:</b> Ingresar datos → Validar → Guardar → Confirmar.</p>
-              <p class="text-gray-300 text-sm"><b>Postcondición:</b> Paciente registrado en la base de datos.</p>
-            </div>
-
-            <div class="glass p-5 rounded-2xl">
-              <h3 class="text-xl font-bold">CU02 — Buscar paciente</h3>
-              <p class="text-gray-300 text-sm mt-2"><b>Actor:</b> Personal del consultorio</p>
-              <p class="text-gray-300 text-sm"><b>Precondición:</b> Personal autenticado.</p>
-              <p class="text-gray-300 text-sm"><b>Flujo principal:</b> Ingresar criterio (cédula/nombre/teléfono) → Mostrar resultados → Seleccionar paciente.</p>
-              <p class="text-gray-300 text-sm"><b>Postcondición:</b> Paciente encontrado y listo para consulta.</p>
-            </div>
-
-            <div class="glass p-5 rounded-2xl">
-              <h3 class="text-xl font-bold">CU03 — Registrar consulta</h3>
-              <p class="text-gray-300 text-sm mt-2"><b>Actor:</b> Doctora / Personal</p>
-              <p class="text-gray-300 text-sm"><b>Precondición:</b> Paciente existente.</p>
-              <p class="text-gray-300 text-sm"><b>Flujo principal:</b> Seleccionar paciente → Ingresar motivo/observaciones → Guardar consulta.</p>
-              <p class="text-gray-300 text-sm"><b>Postcondición:</b> Consulta registrada en el historial.</p>
-            </div>
-
-            <div class="glass p-5 rounded-2xl">
-              <h3 class="text-xl font-bold">CU04 — Registrar pago/depósito</h3>
-              <p class="text-gray-300 text-sm mt-2"><b>Actor:</b> Personal del consultorio</p>
-              <p class="text-gray-300 text-sm"><b>Precondición:</b> Consulta registrada o cita generada.</p>
-              <p class="text-gray-300 text-sm"><b>Flujo principal:</b> Seleccionar consulta → Ingresar monto → Guardar pago → Confirmar.</p>
-              <p class="text-gray-300 text-sm"><b>Postcondición:</b> Pago vinculado a la consulta.</p>
-            </div>
-
-            <div class="glass p-5 rounded-2xl">
-              <h3 class="text-xl font-bold">CU05 — Ver historial del paciente</h3>
-              <p class="text-gray-300 text-sm mt-2"><b>Actor:</b> Doctora / Personal</p>
-              <p class="text-gray-300 text-sm"><b>Precondición:</b> Paciente registrado.</p>
-              <p class="text-gray-300 text-sm"><b>Flujo principal:</b> Buscar paciente → Abrir historial → Ver consultas anteriores.</p>
-              <p class="text-gray-300 text-sm"><b>Postcondición:</b> Historial mostrado correctamente.</p>
-            </div>
-
-            <div class="glass p-5 rounded-2xl">
-              <h3 class="text-xl font-bold">CU06 — Administración (llave maestra)</h3>
-              <p class="text-gray-300 text-sm mt-2"><b>Actor:</b> Administrador</p>
-              <p class="text-gray-300 text-sm"><b>Precondición:</b> Autenticación con llave maestra.</p>
-              <p class="text-gray-300 text-sm"><b>Flujo principal:</b> Ingresar llave → Acceder panel completo → Gestionar usuarios/datos → Guardar cambios.</p>
-              <p class="text-gray-300 text-sm"><b>Postcondición:</b> Cambios aplicados con control de permisos.</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- 3) DISEÑO DE LA SOLUCIÓN -->
-        <div class="glass p-6 rounded-3xl">
-          <h2 class="text-2xl font-bold mb-3">🎨 Diseño de la solución</h2>
-          <p class="text-gray-300">
-            Se plantean bocetos, prototipos y una idea de arquitectura para implementar el sistema.
-          </p>
-        </div>
-
-<!-- 3.1 Wireframes (espacios) -->
-<div class="glass p-6 rounded-3xl">
-  <h2 class="text-2xl font-bold mb-3">14) Crear wireframes (bocetos)</h2>
-
-  <div class="grid md:grid-cols-1 gap-4">
-    
-    <div class="glass p-4 rounded-2xl border border-white/10">
-      <p class="text-gray-200 font-bold mb-3">🖼️ Wireframe: Página web pública</p>
-
-      <div class="w-full rounded-2xl bg-slate-900/40 border border-white/10 overflow-hidden">
-        <img
-          src="imagenes/webpublico.png"
-          alt="Wireframe de la página web pública"
-          class="w-full h-auto object-contain rounded-xl"
-          onerror="this.outerHTML='<span class=&quot;text-gray-400 text-sm block p-4&quot;>No se encontró la imagen: imagenes/webpublico.png</span>';"
-        />
+        <p class="text-gray-400 text-sm mt-3">
+          Grabación de la reunión inicial con el consultorio para levantamiento de requerimientos.
+        </p>
       </div>
-    </div>
 
-  </div>
-</div>
+      <!-- COMPROBANTE -->
+      <div class="glass rounded-3xl p-6">
+        <h2 class="text-xl font-bold mb-4 flex items-center gap-2">
+          🧾 Comprobante de pago
+        </h2>
 
-
- 
-
-<!-- 3.2 Prototipos Figma (espacios) -->
-<div class="glass p-6 rounded-3xl">
-  <h2 class="text-2xl font-bold mb-3">15) Diseñar prototipos en Figma</h2>
-
-  <div class="grid md:grid-cols-2 gap-4">
-    
-    <div class="glass p-4 rounded-2xl border border-white/10">
-      <p class="text-gray-200 font-bold mb-3">🖼️ Captura: Prototipo en Figma</p>
-      <div class="w-full h-56 rounded-2xl bg-slate-900/40 border border-white/10 overflow-hidden flex items-center justify-center">
-        <img
-          src="imagenes/prototipo.png"
-          alt="Prototipo en Figma"
-          class="w-full h-full object-contain"
-          onerror="this.outerHTML='<span class=&quot;text-gray-400 text-sm&quot;>No se encontró: img/prototipo.png</span>';"
-        />
-      </div>
-    </div>
-
-    <div class="glass p-4 rounded-2xl border border-white/10">
-      <p class="text-gray-200 font-bold mb-3">🖼️ Captura: Interacciones (Prototype)</p>
-      <div class="w-full h-56 rounded-2xl bg-slate-900/40 border border-white/10 overflow-hidden flex items-center justify-center">
-        <img
-          src="imagenes/Registro.png"
-          alt="Interacciones del prototipo en Figma"
-          class="w-full h-full object-contain"
-          onerror="this.outerHTML='<span class=&quot;text-gray-400 text-sm&quot;>No se encontró: img/registro.png</span>';"
-        />
-      </div>
-    </div>
-
-  </div>
-</div>
-
-
-<!-- 16) Definir arquitectura del sistema -->
-<div class="glass p-6 md:p-10 rounded-3xl">
-  <h2 class="text-3xl md:text-4xl font-extrabold mb-4">
-    16) Definir arquitectura del sistema
-  </h2>
-
-  <p class="text-gray-300 mb-6 text-base md:text-lg">
-    Se define una arquitectura web simple y escalable que permite centralizar la información del
-    consultorio médico, evitando el uso de archivos Excel y mejorando la seguridad de los datos.
-  </p>
-
-  <div class="glass p-5 md:p-8 rounded-2xl border border-white/10">
-    <p class="text-gray-200 font-bold mb-4 text-lg md:text-xl">
-      🖼️ Diagrama de arquitectura del sistema
-    </p>
-
-    <img
-      src="imagenes/Diagrama.png"
-      alt="Diagrama de arquitectura del sistema del consultorio médico"
-      class="w-full max-h-[520px] object-contain rounded-2xl border border-white/10 bg-slate-900/40"
-    />
-
-    <p class="text-gray-400 text-sm md:text-base mt-4">
-      
-    </p>
-  </div>
-
-  <div class="mt-6 glass p-5 md:p-7 rounded-2xl">
-    <h3 class="font-bold mb-3 text-lg md:text-xl">📌 Componentes de la ar
-
-
-  <div class="mt-4 glass p-5 rounded-2xl">
-    <h3 class="font-bold mb-2">📌 Idea simple de arquitectura (texto)</h3>
-    <ul class="text-gray-300 text-sm list-disc pl-5 space-y-1">
-      <li><b>Frontend Web:</b> interfaz para pacientes y panel para el consultorio.</li>
-      <li><b>Backend (API):</b> maneja registros, consultas, pagos y autenticación.</li>
-      <li><b>Base de datos:</b> guarda pacientes, historial, citas y pagos con respaldo.</li>
-      <li><b>Seguridad:</b> roles (admin/personal) y llave maestra para acciones críticas.</li>
-    </ul>
-  </div>
-</div>
-
-
-        <!-- BOTÓN FINAL -->
-        <div class="text-center">
-          <a href="../index.html"
-             class="glass px-8 py-3 rounded-xl font-bold hover:bg-white/5 transition inline-block">
-            ⬅ Volver al inicio
-          </a>
+        <div class="w-full rounded-2xl overflow-hidden border border-white/10 bg-slate-900/40">
+          <img
+            src="WhatsApp.jpeg"
+            alt="Comprobante de pago del consultorio"
+            class="w-full h-auto object-contain"
+          />
         </div>
 
-      </section>
+        <p class="text-gray-400 text-sm mt-3">
+          Evidencia del depósito realizado por el vendedor para comprobar la venta de la aplicacion.
+        </p>
+      </div>
 
-    </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="text-center mt-12">
+      <a href="../index.html"
+         class="glass px-8 py-3 rounded-xl font-semibold hover:bg-white/10 transition inline-block">
+        ⬅ Volver al inicio
+      </a>
+    </footer>
+
   </main>
 
 </body>
