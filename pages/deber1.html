@@ -1,289 +1,110 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Deber 1 - Sentencias de Control</title>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Deber 1: Consumo de una API</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;700&display=swap" rel="stylesheet">
-
   <style>
-    body {
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      background: #0f172a;
-      color: white;
-    }
-    .glass {
-      background: rgba(255, 255, 255, 0.03);
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-    }
-    .gradient-text {
-      background: linear-gradient(90deg, #38bdf8, #818cf8);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-    .blob {
-      position: absolute;
-      width: 300px;
-      height: 300px;
-      background: #38bdf8;
-      filter: blur(80px);
-      opacity: 0.2;
-      z-index: -1;
-    }
-    pre {
-      white-space: pre-wrap;
-      word-wrap: break-word;
-    }
+    body { font-family: 'Plus Jakarta Sans', sans-serif; background: #0f172a; color: white; }
+    .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); }
+    .gradient-text { background: linear-gradient(90deg, #38bdf8, #818cf8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    code { background: rgba(56, 189, 248, 0.2); padding: 2px 4px; border-radius: 4px; color: #7dd3fc; font-family: monospace; }
   </style>
 </head>
+<body class="p-6 md:p-12">
 
-<body class="overflow-x-hidden relative">
+  <div class="max-w-6xl mx-auto">
+    <header class="mb-8">
+      <h1 class="text-4xl font-extrabold gradient-text">Deber 1: Consumo de una API</h1>
+      <p class="mt-2 text-gray-400">Ingresa al siguiente enlace y consume la API de 
+        <a href="https://jsonplaceholder.typicode.com/users" target="_blank" class="text-sky-400 hover:underline">users</a>
+      </p>
+    </header>
 
-  <div class="blob top-0 left-0"></div>
-  <div class="blob bottom-0 right-0" style="background:#818cf8;"></div>
-
-  <main class="min-h-screen flex items-center justify-center px-6 py-14">
-    <div class="w-full max-w-5xl">
-
-      <!-- Encabezado -->
-      <section class="text-center glass rounded-3xl p-10 md:p-14 mb-10">
-        <div class="flex flex-col items-center gap-4">
-          <span class="bg-sky-500/10 text-sky-400 px-4 py-1 rounded-full text-sm font-medium">
-            Josué Jacome
-          </span>
-
-          <h1 class="text-3xl md:text-5xl font-bold leading-tight">
-            Deber 1: <span class="gradient-text">Sentencias de Control</span>
-          </h1>
-
-          <p class="text-gray-400 max-w-2xl">
-            Objetivo: Desarrollar una página web explicando las sentencias de control, su sintaxis y conceptos fundamentales.
-          </p>
-
-          <a href="../index.html"
-             class="glass px-6 py-3 rounded-xl font-bold hover:bg-white/5 transition">
-            ⬅ Volver al inicio
-          </a>
+    <section class="mb-12 p-6 glass rounded-2xl border-l-4 border-sky-500">
+      <h2 class="text-xl font-bold mb-4 text-sky-400 italic font-mono">// Guía de implementación:</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm leading-relaxed text-gray-300">
+        <div>
+          <p class="mb-3"><strong class="text-white">Paso 1:</strong> Definimos una función <code>async</code>. Esto permite que el navegador no se bloquee mientras espera los datos del servidor.</p>
+          <p><strong class="text-white">Paso 2:</strong> Usamos <code>fetch(url)</code>. Es la instrucción de JavaScript que viaja a la nube para traer el paquete de datos (JSON).</p>
         </div>
-      </section>
-
-      <!-- Contenido del deber -->
-      <section class="grid gap-6">
-
-        <!-- Actividades -->
-        <div class="glass p-6 rounded-3xl">
-          <h2 class="text-2xl font-bold mb-2">📋 Actividades a realizar</h2>
-          <ul class="text-gray-300 list-disc pl-6 space-y-2 mt-4">
-            <li>Explicar qué son las sentencias de control.</li>
-            <li>Detallar la sintaxis de cada tipo de sentencia.</li>
-            <li>Realizar dos ejercicios prácticos.</li>
-          </ul>
+        <div>
+          <p class="mb-3"><strong class="text-white">Paso 3:</strong> Convertimos la respuesta con <code>.json()</code>. Los datos llegan como texto y debemos transformarlos en una lista de objetos legible.</p>
+          <p><strong class="text-white">Paso 4:</strong> Pintamos el HTML. Usamos un ciclo <code>forEach</code> para crear una tarjeta visual por cada usuario recibido y la insertamos en el DOM.</p>
         </div>
+      </div>
+    </section>
 
-        <!-- 1) Qué son -->
-        <div class="glass p-6 rounded-3xl">
-          <h2 class="text-2xl font-bold mb-3">1) ¿Qué son las sentencias de control?</h2>
-          <p class="text-gray-300 leading-relaxed">
-            Las <b>sentencias de control</b> son instrucciones que permiten <b>decidir</b> qué parte del código se ejecuta
-            o <b>repetir</b> acciones varias veces. Básicamente, ayudan a que un programa no sea “lineal”,
-            sino que pueda tomar decisiones según una condición y manejar diferentes caminos.
-          </p>
+    <hr class="border-white/10 mb-12">
 
-          <div class="mt-4 grid md:grid-cols-2 gap-4">
-            <div class="glass p-4 rounded-2xl">
-              <h3 class="font-bold mb-1">✅ Control de decisión</h3>
-              <p class="text-gray-300 text-sm">
-                El programa elige entre opciones (ej: <b>if</b>, <b>else</b>, <b>switch</b>).
-              </p>
-            </div>
-            <div class="glass p-4 rounded-2xl">
-              <h3 class="font-bold mb-1">🔁 Control de repetición</h3>
-              <p class="text-gray-300 text-sm">
-                El programa repite algo (ej: <b>for</b>, <b>while</b>, <b>do while</b>).
-              </p>
-            </div>
-          </div>
-        </div>
+    <div id="user-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <p id="loading" class="col-span-full text-center text-sky-400 animate-pulse font-bold">
+        Obteniendo datos de la API de usuarios...
+      </p>
+    </div>
+  </div>
 
-        <!-- 2) Tipos + sintaxis -->
-        <div class="glass p-6 rounded-3xl">
-          <h2 class="text-2xl font-bold mb-3">2) Tipos de sentencias y su sintaxis</h2>
+  <script>
+    // Función principal para obtener los datos
+    async function fetchUsers() {
+      const url = 'https://jsonplaceholder.typicode.com/users';
+      
+      try {
+        // Ejecutamos la petición
+        const response = await fetch(url);
+        if (!response.ok) throw new Error('Error al conectar con la API');
+        
+        // Transformamos los datos
+        const users = await response.json();
+        
+        // Llamamos a la función de dibujo
+        renderUsers(users);
 
-          <!-- IF -->
-          <div class="mt-4 glass p-5 rounded-2xl">
-            <h3 class="text-xl font-bold">2.1) if / else</h3>
-            <p class="text-gray-300 mt-2">
-              Se usa cuando quieres ejecutar algo <b>solo si</b> se cumple una condición.
-            </p>
+      } catch (error) {
+        console.error('Error:', error);
+        document.getElementById('user-container').innerHTML = 
+          `<p class="text-red-400 bg-red-400/10 p-4 rounded-lg">Hubo un problema al cargar los usuarios.</p>`;
+      } finally {
+        // Quitamos el mensaje de "Cargando..."
+        const loading = document.getElementById('loading');
+        if (loading) loading.remove();
+      }
+    }
 
-            <p class="text-gray-400 text-sm mt-3 mb-2">Sintaxis:</p>
-            <pre class="glass p-4 rounded-2xl text-sky-200 text-sm overflow-auto"><code>if (condicion) {
-  // código si la condición es verdadera
-} else {
-  // código si la condición es falsa
-}</code></pre>
-          </div>
-
-          <!-- ELSE IF -->
-          <div class="mt-4 glass p-5 rounded-2xl">
-            <h3 class="text-xl font-bold">2.2) else if</h3>
-            <p class="text-gray-300 mt-2">
-              Se usa cuando tienes <b>varias condiciones</b> en cadena.
-            </p>
-
-            <p class="text-gray-400 text-sm mt-3 mb-2">Sintaxis:</p>
-            <pre class="glass p-4 rounded-2xl text-sky-200 text-sm overflow-auto"><code>if (condicion1) {
-  // ...
-} else if (condicion2) {
-  // ...
-} else {
-  // ...
-}</code></pre>
-          </div>
-
-          <!-- SWITCH -->
-          <div class="mt-4 glass p-5 rounded-2xl">
-            <h3 class="text-xl font-bold">2.3) switch</h3>
-            <p class="text-gray-300 mt-2">
-              Se usa cuando una variable puede tener <b>varios casos</b> posibles.
-            </p>
-
-            <p class="text-gray-400 text-sm mt-3 mb-2">Sintaxis:</p>
-            <pre class="glass p-4 rounded-2xl text-sky-200 text-sm overflow-auto"><code>switch (valor) {
-  case 1:
-    // ...
-    break;
-  case 2:
-    // ...
-    break;
-  default:
-    // ...
-}</code></pre>
-          </div>
-
-          <!-- FOR -->
-          <div class="mt-4 glass p-5 rounded-2xl">
-            <h3 class="text-xl font-bold">2.4) for</h3>
-            <p class="text-gray-300 mt-2">
-              Repite un bloque un número de veces (tiene inicio, condición y aumento).
-            </p>
-
-            <p class="text-gray-400 text-sm mt-3 mb-2">Sintaxis:</p>
-            <pre class="glass p-4 rounded-2xl text-sky-200 text-sm overflow-auto"><code>for (inicio; condicion; aumento) {
-  // código que se repite
-}</code></pre>
-          </div>
-
-          <!-- WHILE -->
-          <div class="mt-4 glass p-5 rounded-2xl">
-            <h3 class="text-xl font-bold">2.5) while</h3>
-            <p class="text-gray-300 mt-2">
-              Repite mientras la condición sea verdadera (si empieza falsa, no entra).
-            </p>
-
-            <p class="text-gray-400 text-sm mt-3 mb-2">Sintaxis:</p>
-            <pre class="glass p-4 rounded-2xl text-sky-200 text-sm overflow-auto"><code>while (condicion) {
-  // se repite mientras sea true
-}</code></pre>
-          </div>
-
-          <!-- DO WHILE -->
-          <div class="mt-4 glass p-5 rounded-2xl">
-            <h3 class="text-xl font-bold">2.6) do while</h3>
-            <p class="text-gray-300 mt-2">
-              Se ejecuta <b>al menos una vez</b> y luego repite mientras la condición sea verdadera.
-            </p>
-
-            <p class="text-gray-400 text-sm mt-3 mb-2">Sintaxis:</p>
-            <pre class="glass p-4 rounded-2xl text-sky-200 text-sm overflow-auto"><code>do {
-  // se ejecuta mínimo 1 vez
-} while (condicion);</code></pre>
-          </div>
-        </div>
-
-        <!-- 3) Ejercicios -->
-        <div class="glass p-6 rounded-3xl">
-          <h2 class="text-2xl font-bold mb-3">3) Ejercicios prácticos</h2>
-          <p class="text-gray-300">
-            2 ejercicios sencillos usando sentencias de control (en estilo JavaScript).
-          </p>
-
-          <!-- Ejercicio 1 -->
-          <div class="mt-5 glass p-5 rounded-2xl">
-            <h3 class="text-xl font-bold">✅ Ejercicio 1: Clasificar una nota</h3>
-            <p class="text-gray-300 mt-2">
-              Crea un programa que reciba una nota (0 a 10) y muestre:
-              <b>“Aprobado”</b> si es 7 o más, y <b>“Reprobado”</b> si es menor.
-            </p>
-
-            <p class="text-gray-400 text-sm mt-3 mb-2">Código:</p>
-            <pre class="glass p-4 rounded-2xl text-sky-200 text-sm overflow-auto"><code>let nota = 8;
-
-if (nota >= 7) {
-  console.log("Aprobado");
-} else {
-  console.log("Reprobado");
-}</code></pre>
-
-            <p class="text-gray-300 text-sm mt-3">
-              Explicación rápida: si <b>nota >= 7</b> es verdadero, imprime “Aprobado”. Si no, imprime “Reprobado”.
-            </p>
-          </div>
-
-          <!-- Ejercicio 2 -->
-          <div class="mt-5 glass p-5 rounded-2xl">
-            <h3 class="text-xl font-bold">✅ Ejercicio 2: Tabla de multiplicar con for</h3>
-            <p class="text-gray-300 mt-2">
-              Un programa que muestre la tabla de multiplicar de un número (del 1 al 10).
-            </p>
-
-            <p class="text-gray-400 text-sm mt-3 mb-2">Código:</p>
-            <pre class="glass p-4 rounded-2xl text-sky-200 text-sm overflow-auto"><code>let n = 5;
-
-for (let i = 1; i <= 10; i++) {
-  console.log(n + " x " + i + " = " + (n * i));
-}</code></pre>
-
-            <p class="text-gray-300 text-sm mt-3">
-              Explicación rápida: el <b>for</b> repite desde <b>i = 1</b> hasta <b>i = 10</b> y muestra cada multiplicación.
-            </p>
-          </div>
-
-          <!-- VIDEO (Google Drive) - DESPUÉS DEL EJERCICIO 2 -->
-          <div class="mt-6 glass p-5 rounded-2xl">
-            <h3 class="text-xl font-bold">🎥 Video explicativo</h3>
-            <p class="text-gray-300 mt-2">
-              Video subido a Google Drive e incrustado en la página.
-            </p>
-
-            <div class="mt-4 rounded-2xl overflow-hidden border border-white/10">
-              <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;">
-                <iframe
-                  src="https://drive.google.com/file/d/13vtIlG32q6hhaRfle2t6-vOqlf_Gcm4a/preview"
-                  style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"
-                  allow="autoplay; encrypted-media"
-                  allowfullscreen>
-                </iframe>
+    // Función para renderizar los usuarios en el HTML
+    function renderUsers(users) {
+      const container = document.getElementById('user-container');
+      
+      users.forEach(user => {
+        // Estructura dinámica para cada usuario
+        const userCard = `
+          <div class="glass p-6 rounded-3xl border border-white/10 hover:border-sky-500/50 transition-all duration-300 group">
+            <div class="flex items-center gap-4 mb-4">
+              <div class="w-12 h-12 bg-sky-500/10 rounded-full flex items-center justify-center text-sky-400 font-bold group-hover:bg-sky-500 group-hover:text-white transition-colors">
+                ${user.id}
+              </div>
+              <div>
+                <h3 class="font-bold text-lg">${user.name}</h3>
+                <p class="text-sky-400 text-sm italic">@${user.username}</p>
               </div>
             </div>
+            
+            <div class="space-y-2 text-sm text-gray-300 border-t border-white/5 pt-4">
+              <p><strong>📧 Email:</strong> ${user.email}</p>
+              <p><strong>🏢 Empresa:</strong> ${user.company.name}</p>
+              <p><strong>📍 Ciudad:</strong> ${user.address.city}</p>
+              <p><strong>🌐 Web:</strong> <span class="text-indigo-400 font-medium underline underline-offset-4">${user.website}</span></p>
+            </div>
           </div>
-        </div>
+        `;
+        container.innerHTML += userCard;
+      });
+    }
 
-        <!-- Botón final -->
-        <div class="text-center">
-          <a href="../index.html"
-             class="glass px-8 py-3 rounded-xl font-bold hover:bg-white/5 transition inline-block">
-            ⬅ Volver al inicio
-          </a>
-        </div>
-
-      </section>
-
-    </div>
-  </main>
-
+    // Iniciamos el proceso
+    fetchUsers();
+  </script>
 </body>
 </html>

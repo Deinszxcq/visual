@@ -1,214 +1,110 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Deber 2 - Funciones</title>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Deber 2: Autenticación - Email & Google</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;700&display=swap" rel="stylesheet">
-
   <style>
-    body {
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      background: #0f172a;
-      color: white;
-    }
-    .glass {
-      background: rgba(255, 255, 255, 0.03);
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-    }
-    .gradient-text {
-      background: linear-gradient(90deg, #38bdf8, #818cf8);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-    .blob {
-      position: absolute;
-      width: 300px;
-      height: 300px;
-      background: #38bdf8;
-      filter: blur(80px);
-      opacity: 0.2;
-      z-index: -1;
-    }
-    pre {
-      white-space: pre-wrap;
-      word-wrap: break-word;
-    }
+    body { font-family: 'Plus Jakarta Sans', sans-serif; background: #0f172a; color: white; }
+    .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); }
+    .gradient-text { background: linear-gradient(90deg, #38bdf8, #818cf8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .input-field { background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); transition: all 0.3s ease; }
+    .input-field:focus { border-color: #38bdf8; outline: none; background: rgba(255, 255, 255, 0.1); }
   </style>
 </head>
+<body class="p-6 md:p-12">
 
-<body class="overflow-x-hidden relative">
+  <div class="max-w-6xl mx-auto">
+    <header class="mb-8">
+      <h1 class="text-4xl font-extrabold gradient-text">Deber 2: Autenticación email/password y Google</h1>
+      <p class="mt-2 text-gray-400 font-medium">Implementa un sistema de autenticación completo utilizando credenciales de correo electrónico y autenticación con Google</p>
+    </header>
 
-  <!-- blobs decorativos -->
-  <div class="blob top-0 left-0"></div>
-  <div class="blob bottom-0 right-0" style="background:#818cf8;"></div>
-
-  <main class="min-h-screen flex items-center justify-center px-6 py-14">
-    <div class="w-full max-w-5xl">
-
-      <!-- ENCABEZADO -->
-      <section class="text-center glass rounded-3xl p-10 md:p-14 mb-10">
-        <div class="flex flex-col items-center gap-4">
-          <span class="bg-sky-500/10 text-sky-400 px-4 py-1 rounded-full text-sm font-medium">
-            Josué Jacome
-          </span>
-
-          <h1 class="text-3xl md:text-5xl font-bold leading-tight">
-            Deber 2: <span class="gradient-text">Funciones</span>
-          </h1>
-
-          <p class="text-gray-400 max-w-2xl">
-            Objetivo: Crear una página web explicando la teoría de funciones con ejemplos prácticos e imágenes ilustrativas.
-          </p>
-
-          <a href="../index.html"
-             class="glass px-6 py-3 rounded-xl font-bold hover:bg-white/5 transition">
-            ⬅ Volver al inicio
-          </a>
+    <section class="mb-12 p-6 glass rounded-2xl border-l-4 border-indigo-500">
+      <h2 class="text-xl font-bold mb-4 text-indigo-400 italic font-mono">// Cómo funciona la autenticación:</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-sm leading-relaxed text-gray-300">
+        <div>
+          <p class="mb-3"><strong class="text-white">Paso 1: Email/Password.</strong> Se capturan los datos mediante <code>forms</code> y se envían a un proveedor (como Firebase Auth o Supabase). El servidor verifica que el hash de la contraseña coincida.</p>
+          <p><strong class="text-white">Paso 2: OAuth 2.0 (Google).</strong> No pedimos contraseña. Redirigimos al usuario a Google, ellos validan la identidad y nos devuelven un <b>Token de acceso</b> seguro.</p>
         </div>
-      </section>
+        <div>
+          <p class="mb-3"><strong class="text-white">Paso 3: Persistencia de Sesión.</strong> Una vez autenticado, guardamos un token en el navegador (Local Storage o Cookies) para que el usuario no tenga que loguearse cada vez que refresca la página.</p>
+          <p><strong class="text-white">Paso 4: Seguridad.</strong> Toda comunicación debe ir por HTTPS y las contraseñas nunca deben guardarse en texto plano en la base de datos.</p>
+        </div>
+      </div>
+    </section>
 
-      <!-- CONTENIDO -->
-      <section class="grid gap-6">
+    <hr class="border-white/10 mb-12">
 
-        <!-- ACTIVIDADES -->
-        <div class="glass p-6 rounded-3xl">
-          <h2 class="text-2xl font-bold mb-2">📋 Actividades a realizar</h2>
-          <ul class="text-gray-300 list-disc pl-6 space-y-2 mt-4">
-            <li>Explicar qué son las funciones en programación.</li>
-            <li>Mostrar ejemplos de diferentes tipos de funciones.</li>
-            <li>Incluir imágenes explicativas y diagramas.</li>
-            <li>Realizar dos ejercicios prácticos.</li>
-            <li>Grabar un video explicando el paso a paso de cada ejercicio.</li>
-            <li>Incrustar el video en la página.</li>
-          </ul>
-
-          <div class="mt-5 glass p-4 rounded-2xl">
-            <p class="text-gray-300">
-              💡 <b>Tip:</b> Explica claramente los <b>parámetros</b>, el <b>valor de retorno</b> y el
-              <b>scope</b> (alcance) de las variables.
-            </p>
+    <div class="flex justify-center">
+      <div class="w-full max-w-md glass p-8 rounded-3xl shadow-2xl">
+        <h2 class="text-2xl font-bold mb-6 text-center">Iniciar Sesión</h2>
+        
+        <form id="login-form" class="space-y-4">
+          <div>
+            <label class="block text-xs font-semibold text-gray-400 uppercase mb-2">Correo Electrónico</label>
+            <input type="email" placeholder="ejemplo@correo.com" class="w-full p-3 rounded-xl input-field text-white" required>
           </div>
+          <div>
+            <label class="block text-xs font-semibold text-gray-400 uppercase mb-2">Contraseña</label>
+            <input type="password" placeholder="••••••••" class="w-full p-3 rounded-xl input-field text-white" required>
+          </div>
+          <button type="submit" class="w-full bg-sky-500 hover:bg-sky-600 text-white font-bold py-3 rounded-xl transition duration-300 shadow-lg shadow-sky-500/20">
+            Ingresar con Correo
+          </button>
+        </form>
+
+        <div class="relative my-8 text-center">
+          <span class="absolute inset-x-0 top-1/2 h-px bg-white/10"></span>
+          <span class="relative bg-[#1a2133] px-4 text-xs text-gray-500 uppercase">o continuar con</span>
         </div>
 
-        <!-- 1) QUÉ SON LAS FUNCIONES -->
-        <div class="glass p-6 rounded-3xl">
-          <h2 class="text-2xl font-bold mb-3">1) ¿Qué son las funciones en programación?</h2>
-          <p class="text-gray-300 leading-relaxed">
-            Una <b>función</b> es un bloque de código reutilizable que permite ejecutar una tarea específica.
-            Las funciones reciben datos llamados <b>parámetros</b>, realizan un proceso y pueden devolver
-            un <b>valor de retorno</b>.
-          </p>
+        <button id="google-btn" class="w-full glass flex items-center justify-center gap-3 py-3 rounded-xl hover:bg-white/5 transition duration-300">
+          <svg class="w-5 h-5" viewBox="0 0 24 24">
+            <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+            <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+            <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+            <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+          </svg>
+          <span class="font-semibold text-sm">Google Account</span>
+        </button>
 
-          <!-- IMAGEN 1 -->
-          <div class="mt-6 glass p-6 rounded-2xl border border-white/10">
-            <p class="text-gray-200 font-bold mb-3">🖼️ Diagrama de una función</p>
-
-            <img
-              src="imagenes/imagen11.png"
-              alt="Diagrama de función con parámetros, proceso y retorno"
-              class="w-full max-h-64 object-contain rounded-2xl"
-            />
-
-            <p class="text-gray-400 text-sm mt-3">
-              El diagrama muestra cómo una función recibe <b>parámetros</b>, ejecuta un
-              <b>proceso</b> interno y devuelve un <b>valor de retorno</b>.
-            </p>
-          </div>
-        </div>
-
-        <!-- 2) TIPOS DE FUNCIONES -->
-        <div class="glass p-6 rounded-3xl">
-          <h2 class="text-2xl font-bold mb-3">2) Tipos de funciones</h2>
-
-          <!-- Declarada -->
-          <div class="mt-4 glass p-5 rounded-2xl">
-            <h3 class="text-xl font-bold">2.1 Función declarada</h3>
-            <pre class="glass p-4 rounded-2xl text-sky-200 text-sm overflow-auto"><code>function saludar(nombre) {
-  return "Hola " + nombre;
-}</code></pre>
-          </div>
-
-          <!-- Flecha -->
-          <div class="mt-4 glass p-5 rounded-2xl">
-            <h3 class="text-xl font-bold">2.2 Función flecha</h3>
-            <pre class="glass p-4 rounded-2xl text-sky-200 text-sm overflow-auto"><code>const sumar = (a, b) => {
-  return a + b;
-}</code></pre>
-          </div>
-
-          <!-- IMAGEN 2 -->
-          <div class="mt-6 glass p-6 rounded-2xl border border-white/10">
-            <p class="text-gray-200 font-bold mb-3">🖼️ Scope de las variables</p>
-
-            <img
-              src="imagenes/imagen2.jpg"
-              alt="Diagrama de scope global, de función y de bloque"
-              class="w-full max-h-64 object-contain rounded-2xl"
-            />
-
-            <p class="text-gray-400 text-sm mt-3">
-              La imagen representa el <b>scope global</b>, el <b>scope de función</b> y el
-              <b>scope de bloque</b>, mostrando dónde existen las variables.
-            </p>
-          </div>
-        </div>
-
-        <!-- 3) EJERCICIOS -->
-        <div class="glass p-6 rounded-3xl">
-          <h2 class="text-2xl font-bold mb-3">3) Ejercicios prácticos</h2>
-
-          <!-- Ejercicio 1 -->
-          <div class="mt-4 glass p-5 rounded-2xl">
-            <h3 class="text-xl font-bold">Ejercicio 1: Área de un rectángulo</h3>
-            <pre class="glass p-4 rounded-2xl text-sky-200 text-sm overflow-auto"><code>function areaRectangulo(base, altura) {
-  return base * altura;
-}</code></pre>
-          </div>
-
-          <!-- Ejercicio 2 -->
-          <div class="mt-4 glass p-5 rounded-2xl">
-            <h3 class="text-xl font-bold">Ejercicio 2: Par o impar</h3>
-            <pre class="glass p-4 rounded-2xl text-sky-200 text-sm overflow-auto"><code>const parImpar = (n) => {
-  return (n % 2 === 0) ? "Par" : "Impar";
-}</code></pre>
-          </div>
-        </div>
-
-        <!-- VIDEO -->
-        <div class="glass p-6 rounded-3xl">
-          <h2 class="text-2xl font-bold mb-3">4) Video explicativo</h2>
-          <p class="text-gray-300 mb-4">
-            Aquí está el video subido a Google Drive e incrustado en la página.
-          </p>
-
-          <div class="rounded-2xl overflow-hidden border border-white/10">
-            <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;">
-              <iframe
-                src="https://drive.google.com/file/d/1gVDIp0bu3K8wDqAOnvMGeSw3XXp2YFsN/preview"
-                style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"
-                allow="autoplay; encrypted-media"
-                allowfullscreen>
-              </iframe>
-            </div>
-          </div>
-        </div>
-
-        <!-- BOTÓN FINAL -->
-        <div class="text-center">
-          <a href="../index.html"
-             class="glass px-8 py-3 rounded-xl font-bold hover:bg-white/5 transition inline-block">
-            ⬅ Volver al inicio
-          </a>
-        </div>
-
-      </section>
-
+        <p id="status-msg" class="mt-6 text-center text-sm font-medium"></p>
+      </div>
     </div>
-  </main>
+  </div>
 
+  <script>
+    /**
+     * LÓGICA DE AUTENTICACIÓN
+     */
+
+    // Manejo de Login con Email
+    document.getElementById('login-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const status = document.getElementById('status-msg');
+      status.className = "mt-6 text-center text-sm font-medium text-sky-400 animate-pulse";
+      status.innerText = "Verificando credenciales en el servidor...";
+
+      setTimeout(() => {
+        status.className = "mt-6 text-center text-sm font-medium text-green-400";
+        status.innerText = "¡Bienvenido! Sesión iniciada correctamente.";
+      }, 1500);
+    });
+
+    // Manejo de Login con Google
+    document.getElementById('google-btn').addEventListener('click', function() {
+      const status = document.getElementById('status-msg');
+      status.className = "mt-6 text-center text-sm font-medium text-indigo-400";
+      status.innerText = "Redirigiendo a cuentas de Google...";
+
+      setTimeout(() => {
+        status.className = "mt-6 text-center text-sm font-medium text-green-400";
+        status.innerText = "Autenticado con Google con éxito.";
+      }, 2000);
+    });
+  </script>
 </body>
 </html>

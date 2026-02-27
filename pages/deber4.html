@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Deber 4: CRUD utilizando Room</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Plus Jakarta Sans', sans-serif; background: #0f172a; color: white; }
+    .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); }
+    .gradient-text { background: linear-gradient(90deg, #f472b6, #fb923c); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .room-tag { background: rgba(244, 114, 182, 0.1); color: #f472b6; border: 1px solid rgba(244, 114, 182, 0.3); }
+  </style>
+</head>
+<body class="p-6 md:p-12">
+
+  <div class="max-w-6xl mx-auto">
+    <header class="mb-8">
+      <h1 class="text-4xl font-extrabold gradient-text">Deber 4: CRUD utilizando Room</h1>
+      <p class="mt-2 text-gray-400 font-medium">Implementa operaciones CRUD utilizando la biblioteca Room para persistencia de datos local.</p>
+    </header>
+
+    <section class="mb-12 p-6 glass rounded-2xl border-l-4 border-pink-500">
+      <h2 class="text-xl font-bold mb-4 text-pink-400 italic font-mono">// Arquitectura de Persistencia Local:</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-sm leading-relaxed text-gray-300">
+        <div>
+          <p class="mb-3"><strong class="text-white">1. Entity (Entidad):</strong> Definimos la tabla. Cada clase anotada con <code>@Entity</code> representa una tabla en la base de datos SQLite interna del celular.</p>
+          <p><strong class="text-white">2. DAO (Data Access Object):</strong> Es la interfaz donde escribimos las consultas SQL. Usamos <code>@Insert</code>, <code>@Query</code>, <code>@Update</code> y <code>@Delete</code>.</p>
+        </div>
+        <div>
+          <p class="mb-3"><strong class="text-white">3. Room Database:</strong> Es el punto de acceso principal. Gestiona las conexiones y asegura que los datos sean consistentes incluso si el app se cierra.</p>
+          <p><strong class="text-white">4. Ventaja:</strong> A diferencia de una API, Room funciona **sin internet**. Los datos se quedan guardados físicamente en el almacenamiento del dispositivo.</p>
+        </div>
+      </div>
+    </section>
+
+    <hr class="border-white/10 mb-12">
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      
+      <div class="lg:col-span-1 glass p-6 rounded-3xl h-fit border-pink-500/20">
+        <h3 class="text-xl font-bold mb-4 flex items-center gap-2">
+          <span class="w-3 h-3 bg-pink-500 rounded-full animate-ping"></span>
+          SQLite Local Sync
+        </h3>
+        <div class="space-y-4">
+          <div>
+            <label class="block text-xs font-semibold text-gray-400 mb-2">NOMBRE DEL CONTACTO</label>
+            <input type="text" id="contact-name" placeholder="Ej. Juan Pérez" class="w-full p-3 rounded-xl bg-white/5 border border-white/10 focus:border-pink-500 outline-none">
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-gray-400 mb-2">TELÉFONO</label>
+            <input type="tel" id="contact-phone" placeholder="099-999-9999" class="w-full p-3 rounded-xl bg-white/5 border border-white/10 focus:border-pink-500 outline-none">
+          </div>
+          <button onclick="saveToRoom()" class="w-full bg-pink-600 hover:bg-pink-700 text-white font-bold py-3 rounded-xl transition duration-300 shadow-lg shadow-pink-500/20">
+            Ejecutar @Insert
+          </button>
+        </div>
+      </div>
+
+      <div class="lg:col-span-2">
+        <div class="flex justify-between items-center mb-4">
+          <h3 class="text-xl font-bold">Tabla de Datos (Room Entity)</h3>
+          <span class="px-3 py-1 rounded-full text-[10px] font-bold room-tag tracking-widest uppercase">Offline Storage</span>
+        </div>
+        
+        <div id="room-list" class="space-y-3">
+          <div class="text-center py-10 glass rounded-2xl border-dashed border-2 border-white/5 text-gray-500">
+            Esperando transacciones de base de datos...
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    /**
+     * SIMULACIÓN DE LA LÓGICA DE ROOM DATABASE
+     */
+    let localDB = [];
+
+    function saveToRoom() {
+      const name = document.getElementById('contact-name').value;
+      const phone = document.getElementById('contact-phone').value;
+
+      if (!name || !phone) return;
+
+      const newEntry = {
+        uid: Math.floor(Math.random() * 1000),
+        name: name,
+        phone: phone
+      };
+
+      localDB.push(newEntry);
+      
+      // Limpiar campos
+      document.getElementById('contact-name').value = '';
+      document.getElementById('contact-phone').value = '';
+      
+      renderRoomUI();
+    }
+
+    function deleteFromRoom(uid) {
+      localDB = localDB.filter(entry => entry.uid !== uid);
+      renderRoomUI();
+    }
+
+    function renderRoomUI() {
+      const container = document.getElementById('room-list');
+      
+      if (localDB.length === 0) {
+        container.innerHTML = `<div class="text-center py-10 glass rounded-2xl border-dashed border-2 border-white/5 text-gray-500">La base de datos está vacía.</div>`;
+        return;
+      }
+
+      container.innerHTML = '';
+      localDB.forEach(entry => {
+        container.innerHTML += `
+          <div class="glass p-4 rounded-2xl flex justify-between items-center border-l-2 border-pink-500 hover:bg-white/5 transition">
+            <div class="flex items-center gap-4">
+              <div class="text-[10px] font-mono text-pink-400 bg-pink-400/10 px-2 py-1 rounded">ID: ${entry.uid}</div>
+              <div>
+                <h4 class="font-bold text-gray-100">${entry.name}</h4>
+                <p class="text-xs text-gray-400">${entry.phone}</p>
+              </div>
+            </div>
+            <button onclick="deleteFromRoom(${entry.uid})" class="text-red-400 hover:text-red-300 text-sm font-bold p-2">
+              Eliminar
+            </button>
+          </div>
+        `;
+      });
+    }
+  </script>
+</body>
+</html>
