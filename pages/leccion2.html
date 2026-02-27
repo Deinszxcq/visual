@@ -3,230 +3,86 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Lección 2 - Figma: Herramientas de Diseño</title>
+  <title>Proyecto Integrador</title>
 
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;700&display=swap" rel="stylesheet">
 
   <style>
-    body { font-family: 'Plus Jakarta Sans', sans-serif; background:#0f172a; color:white; }
-    .glass { background: rgba(255,255,255,0.03); backdrop-filter: blur(10px); border:1px solid rgba(255,255,255,0.1); }
+    body { font-family: 'Plus Jakarta Sans', sans-serif; background: #0f172a; color: white; }
+    .glass { background: rgba(255,255,255,0.04); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.08); }
     .gradient-text { background: linear-gradient(90deg,#38bdf8,#818cf8); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
-    .blob { position:absolute; width:300px; height:300px; background:#38bdf8; filter:blur(80px); opacity:0.2; z-index:-1; }
-    pre { white-space: pre-wrap; word-wrap: break-word; }
+    .blob { position:absolute; width:320px; height:320px; background:#38bdf8; filter:blur(90px); opacity:0.25; z-index:-1; }
   </style>
 </head>
 
 <body class="overflow-x-hidden relative">
+
+  <!-- blobs -->
   <div class="blob top-0 left-0"></div>
   <div class="blob bottom-0 right-0" style="background:#818cf8;"></div>
 
-  <main class="min-h-screen flex items-center justify-center px-6 py-14">
-    <div class="w-full max-w-5xl">
+  <main class="min-h-screen px-6 py-14">
+    <div class="max-w-6xl mx-auto">
 
       <!-- HEADER -->
-      <section class="text-center glass rounded-3xl p-10 md:p-14 mb-10">
-        <div class="flex flex-col items-center gap-4">
-          <span class="bg-sky-500/10 text-sky-400 px-4 py-1 rounded-full text-sm font-medium">
-            Josué Jacome
-          </span>
+      <section class="text-center glass rounded-3xl p-10 md:p-14 mb-12">
+        <span class="bg-sky-500/10 text-sky-400 px-4 py-1 rounded-full text-sm font-medium">
+          Josué Jacome
+        </span>
 
-          <h1 class="text-3xl md:text-5xl font-bold leading-tight">
-            Lección 2: <span class="gradient-text">Figma - Herramientas de Diseño</span>
-          </h1>
+        <h1 class="text-3xl md:text-5xl font-bold mt-4">
+          Proyecto Integrador
+        </h1>
 
-          <p class="text-gray-400 max-w-3xl">
-            Objetivo: Documentar los comandos más utilizados en Figma para el diseño de interfaces, con capturas y ejemplos.
-          </p>
+        <p class="text-gray-400 mt-4 max-w-3xl mx-auto">
+          Desarrollo de la documentación teórica y presentación del proyecto integrador.
+        </p>
 
-          <a href="../index.html" class="glass px-6 py-3 rounded-xl font-bold hover:bg-white/5 transition">
-            ⬅ Volver al inicio
-          </a>
-        </div>
+        <a href="../index.html" class="inline-block mt-6 glass px-6 py-3 rounded-xl font-bold hover:bg-white/5 transition">
+          ⬅ Volver al inicio
+        </a>
       </section>
 
-      <!-- CONTENIDO -->
-      <section class="grid gap-6">
+      <!-- LECCION 2 -->
+      <section class="glass rounded-3xl p-8 mb-10 text-center">
+        <h2 class="text-2xl font-bold gradient-text mb-4">
+          Lección 2: Elaboración del Proyecto Integrador Teórico
+        </h2>
 
-        <!-- CONTENIDO A INCLUIR -->
-        <div class="glass p-6 rounded-3xl">
-          <h2 class="text-2xl font-bold mb-2">📋 Contenido a incluir</h2>
-          <ul class="text-gray-300 list-disc pl-6 space-y-2 mt-4">
-            <li>Herramientas de selección y manipulación</li>
-            <li>Herramientas de dibujo (formas, vectores, texto)</li>
-            <li>Comandos de alineación y distribución</li>
-            <li>Trabajo con componentes y estilos</li>
-            <li>Herramientas de prototipado</li>
-          </ul>
+        <p class="text-gray-300 mb-6 max-w-2xl mx-auto">
+          Desarrollo de la documentación teórica del proyecto integrador incluyendo
+          problema, objetivos, tecnologías, arquitectura y conclusiones.
+        </p>
 
-          <div class="mt-5 glass p-4 rounded-2xl">
-            <p class="text-gray-300">
-              🎯 Para cada comando: <b>qué hace</b>, <b>cuándo usarlo</b>, <b>capturas</b> y <b>ejemplo práctico</b>.
-            </p>
-          </div>
-        </div>
-
-        <!-- 1) SELECCIÓN Y MANIPULACIÓN -->
-        <div class="glass p-6 rounded-3xl">
-          <h2 class="text-2xl font-bold mb-3">1) Herramientas de selección y manipulación</h2>
-
-          <!-- Move -->
-          <div class="mt-4 glass p-5 rounded-2xl">
-            <h3 class="text-xl font-bold">1.1 Move Tool (V) - Seleccionar y mover</h3>
-            <p class="text-gray-300 mt-2"><b>Qué hace:</b> Selecciona objetos y los mueve por el lienzo.</p>
-            <p class="text-gray-300 mt-2"><b>Cuándo usarlo:</b> Para ajustar la posición de elementos como botones, textos o tarjetas.</p>
-
-            <div class="mt-4 rounded-2xl overflow-hidden border border-white/10">
-              <img src="imagenes/move.png" alt="Move Tool en Figma" class="w-full max-h-96 object-contain bg-slate-900/40">
-            </div>
-
-            <div class="mt-4 glass p-4 rounded-2xl">
-              <p class="text-gray-200 font-bold mb-1">🧪 Ejemplo práctico</p>
-              <p class="text-gray-300 text-sm">
-                Se seleccionó un rectángulo con la herramienta <b>V</b> y se movió a otra parte del lienzo para acomodar el diseño.
-              </p>
-            </div>
-          </div>
-
-          <!-- Scale -->
-          <div class="mt-4 glass p-5 rounded-2xl">
-            <h3 class="text-xl font-bold">1.2 Scale Tool (K) - Escalar</h3>
-            <p class="text-gray-300 mt-2"><b>Qué hace:</b> Escala un objeto de forma proporcional (aumentar o reducir tamaño).</p>
-            <p class="text-gray-300 mt-2"><b>Cuándo usarlo:</b> Para agrandar o reducir grupos, iconos o componentes rápidamente.</p>
-
-            <div class="mt-4 rounded-2xl overflow-hidden border border-white/10">
-              <img src="imagenes/escalar.png" alt="Scale Tool en Figma" class="w-full max-h-96 object-contain bg-slate-900/40">
-            </div>
-          </div>
-        </div>
-
-        <!-- 2) DIBUJO -->
-        <div class="glass p-6 rounded-3xl">
-          <h2 class="text-2xl font-bold mb-3">2) Herramientas de dibujo (formas, vectores, texto)</h2>
-
-          <!-- Rectangle -->
-          <div class="mt-4 glass p-5 rounded-2xl">
-            <h3 class="text-xl font-bold">2.1 Rectangle (R) - Rectángulo</h3>
-            <p class="text-gray-300 mt-2"><b>Qué hace:</b> Crea rectángulos (base de botones, tarjetas, contenedores).</p>
-            <p class="text-gray-300 mt-2"><b>Cuándo usarlo:</b> Para crear botones, cards, fondos, inputs, etc.</p>
-
-            <div class="mt-4 rounded-2xl overflow-hidden border border-white/10">
-              <img src="imagenes/rectangulo.png" alt="Rectángulo en Figma" class="w-full max-h-96 object-contain bg-slate-900/40">
-            </div>
-          </div>
-
-          <!-- Pen / Vector -->
-          <div class="mt-4 glass p-5 rounded-2xl">
-            <h3 class="text-xl font-bold">2.2 Pen (P) - Vector / Pluma</h3>
-            <p class="text-gray-300 mt-2"><b>Qué hace:</b> Crea formas personalizadas usando nodos (vectores).</p>
-            <p class="text-gray-300 mt-2"><b>Cuándo usarlo:</b> Para diseñar íconos simples o formas únicas.</p>
-
-            <div class="mt-4 rounded-2xl overflow-hidden border border-white/10">
-              <img src="imagenes/vector.png" alt="Vector / Pen Tool en Figma" class="w-full max-h-96 object-contain bg-slate-900/40">
-            </div>
-          </div>
-
-          <!-- Text -->
-          <div class="mt-4 glass p-5 rounded-2xl">
-            <h3 class="text-xl font-bold">2.3 Text (T) - Texto</h3>
-            <p class="text-gray-300 mt-2"><b>Qué hace:</b> Inserta texto (títulos, labels, párrafos).</p>
-            <p class="text-gray-300 mt-2"><b>Cuándo usarlo:</b> Para escribir contenido y definir jerarquía visual en la interfaz.</p>
-
-            <div class="mt-4 rounded-2xl overflow-hidden border border-white/10">
-              <img src="imagenes/Texto.png" alt="Texto en Figma" class="w-full max-h-96 object-contain bg-slate-900/40">
-            </div>
-          </div>
-        </div>
-
-        <!-- 3) ALINEACIÓN Y DISTRIBUCIÓN -->
-        <div class="glass p-6 rounded-3xl">
-          <h2 class="text-2xl font-bold mb-3">3) Comandos de alineación y distribución</h2>
-
-          <!-- Align -->
-          <div class="mt-4 glass p-5 rounded-2xl">
-            <h3 class="text-xl font-bold">3.1 Align (Alinear) - Panel superior</h3>
-            <p class="text-gray-300 mt-2"><b>Qué hace:</b> Alinea objetos (izquierda, centro, derecha, arriba, medio, abajo).</p>
-            <p class="text-gray-300 mt-2"><b>Cuándo usarlo:</b> Cuando varios elementos deben quedar perfectamente alineados.</p>
-
-            <div class="mt-4 rounded-2xl overflow-hidden border border-white/10">
-              <img src="imagenes/dalinear.png" alt="Alinear en Figma" class="w-full max-h-96 object-contain bg-slate-900/40">
-            </div>
-          </div>
-
-          <!-- Distribute -->
-          <div class="mt-4 glass p-5 rounded-2xl">
-            <h3 class="text-xl font-bold">3.2 Distribute (Distribuir)</h3>
-            <p class="text-gray-300 mt-2"><b>Qué hace:</b> Reparte el espacio de forma uniforme entre varios objetos.</p>
-            <p class="text-gray-300 mt-2"><b>Cuándo usarlo:</b> Cuando quieres que la separación entre elementos sea igual.</p>
-
-            <div class="mt-4 rounded-2xl overflow-hidden border border-white/10">
-              <img src="imagenes/distribuir.png" alt="Distribuir en Figma" class="w-full max-h-96 object-contain bg-slate-900/40">
-            </div>
-          </div>
-        </div>
-
-        <!-- 4) COMPONENTES Y ESTILOS -->
-        <div class="glass p-6 rounded-3xl">
-          <h2 class="text-2xl font-bold mb-3">4) Componentes y estilos</h2>
-
-          <!-- Components -->
-          <div class="mt-4 glass p-5 rounded-2xl">
-            <h3 class="text-xl font-bold">4.1 Components (Crear componente)</h3>
-            <p class="text-gray-300 mt-2"><b>Qué hace:</b> Convierte un elemento en componente reutilizable.</p>
-            <p class="text-gray-300 mt-2"><b>Cuándo usarlo:</b> Cuando repetirás botones, cards, inputs, etc.</p>
-
-            <div class="mt-4 rounded-2xl overflow-hidden border border-white/10">
-              <img src="imagenes/componentes.png" alt="Componentes en Figma" class="w-full max-h-96 object-contain bg-slate-900/40">
-            </div>
-          </div>
-
-          <!-- Styles -->
-          <div class="mt-4 glass p-5 rounded-2xl">
-            <h3 class="text-xl font-bold">4.2 Styles (Colores, Tipografía)</h3>
-            <p class="text-gray-300 mt-2"><b>Qué hace:</b> Guarda estilos de color y texto para reutilizarlos y mantener consistencia.</p>
-            <p class="text-gray-300 mt-2"><b>Cuándo usarlo:</b> Cuando quieres que toda la interfaz mantenga el mismo estilo visual.</p>
-
-            <div class="mt-4 rounded-2xl overflow-hidden border border-white/10">
-              <img src="imagenes/colores.png" alt="Styles en Figma" class="w-full max-h-96 object-contain bg-slate-900/40">
-            </div>
-          </div>
-        </div>
-
-        <!-- 5) PROTOTIPADO -->
-        <div class="glass p-6 rounded-3xl">
-          <h2 class="text-2xl font-bold mb-3">5) Herramientas de prototipado</h2>
-
-          <!-- Interaction -->
-          <div class="mt-4 glass p-5 rounded-2xl">
-            <h3 class="text-xl font-bold">5.1 Prototype: Interactions (Click / Navigate)</h3>
-            <p class="text-gray-300 mt-2"><b>Qué hace:</b> Conecta pantallas y crea interacciones (click → navegar).</p>
-            <p class="text-gray-300 mt-2"><b>Cuándo usarlo:</b> Para simular el flujo real de navegación de una app/web.</p>
-
-            <div class="mt-4 rounded-2xl overflow-hidden border border-white/10">
-              <img src="imagenes/interaccion.png" alt="Interacción Prototype en Figma" class="w-full max-h-96 object-contain bg-slate-900/40">
-            </div>
-          </div>
-
-          <!-- Present -->
-          <div class="mt-4 glass p-5 rounded-2xl">
-            <h3 class="text-xl font-bold">5.2 Present (Reproducir prototipo)</h3>
-            <p class="text-gray-300 mt-2"><b>Qué hace:</b> Reproduce el prototipo como si fuera una app real.</p>
-            <p class="text-gray-300 mt-2"><b>Cuándo usarlo:</b> Para presentar tu diseño y probar que la navegación funciona.</p>
-
-            <div class="mt-4 rounded-2xl overflow-hidden border border-white/10">
-              <img src="imagenes/present.png" alt="Present en Figma" class="w-full max-h-96 object-contain bg-slate-900/40">
-            </div>
-          </div>
-        </div>
-
-        <!-- BOTÓN FINAL -->
-        <div class="text-center">
-          <a href="../index.html" class="glass px-8 py-3 rounded-xl font-bold hover:bg-white/5 transition inline-block">
-            ⬅ Volver al inicio
-          </a>
-        </div>
-
+        <a href="pdf/Proyecto Integrador2.pdf" download
+           class="inline-block glass px-8 py-4 rounded-2xl font-bold hover:bg-white/5 transition">
+          ⬇ Descargar Proyecto Integrador (PDF)
+        </a>
       </section>
+
+      <!-- LECCION 3 -->
+      <section class="glass rounded-3xl p-8 mb-10 text-center">
+        <h2 class="text-2xl font-bold gradient-text mb-4">
+          Lección 3: Presentación del Proyecto Integrador
+        </h2>
+
+        <p class="text-gray-300 mb-6 max-w-2xl mx-auto">
+          Diapositivas de presentación del proyecto integrador con tema, objetivos,
+          tecnologías, problema que resuelve la aplicación y demostración.
+        </p>
+
+        <a href="pdf/Diapositiva.pdf" download
+           class="inline-block glass px-8 py-4 rounded-2xl font-bold hover:bg-white/5 transition">
+          ⬇ Descargar Diapositivas (PDF)
+        </a>
+      </section>
+
+      <!-- FOOTER -->
+      <footer class="text-center text-gray-500 mt-10">
+        Desarrollo de Aplicaciones Móviles — Proyecto Integrador
+      </footer>
+
     </div>
   </main>
 </body>

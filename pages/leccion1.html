@@ -3,357 +3,170 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Lección 1 - Actuación en Clase</title>
+  <title>Lección 1 - POO</title>
 
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;700&display=swap" rel="stylesheet">
 
   <style>
     body { font-family: 'Plus Jakarta Sans', sans-serif; background: #0f172a; color: white; }
-    .glass { background: rgba(255,255,255,0.03); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.1); }
+    .glass { background: rgba(255,255,255,0.04); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.08); }
     .gradient-text { background: linear-gradient(90deg,#38bdf8,#818cf8); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
-    .blob { position:absolute; width:300px; height:300px; background:#38bdf8; filter:blur(80px); opacity:0.2; z-index:-1; }
+    .blob { position:absolute; width:320px; height:320px; background:#38bdf8; filter:blur(90px); opacity:0.25; z-index:-1; }
     pre { white-space: pre-wrap; word-wrap: break-word; }
   </style>
 </head>
 
 <body class="overflow-x-hidden relative">
+
+  <!-- blobs -->
   <div class="blob top-0 left-0"></div>
   <div class="blob bottom-0 right-0" style="background:#818cf8;"></div>
 
-  <main class="min-h-screen flex items-center justify-center px-6 py-14">
-    <div class="w-full max-w-5xl">
+  <main class="min-h-screen px-6 py-14">
+    <div class="max-w-6xl mx-auto">
 
-      <!-- Header -->
-      <section class="text-center glass rounded-3xl p-10 md:p-14 mb-10">
-        <div class="flex flex-col items-center gap-4">
-          <span class="bg-sky-500/10 text-sky-400 px-4 py-1 rounded-full text-sm font-medium">
-            Josué Jacome
-          </span>
+      <!-- HEADER -->
+      <section class="text-center glass rounded-3xl p-10 md:p-14 mb-12">
+        <span class="bg-sky-500/10 text-sky-400 px-4 py-1 rounded-full text-sm font-medium">
+          Josué Jacome
+        </span>
 
-          <h1 class="text-3xl md:text-5xl font-bold leading-tight">
-            Lección 1: <span class="gradient-text">Actuación en Clase</span>
-          </h1>
+        <h1 class="text-3xl md:text-5xl font-bold mt-4">
+          Lección 1: <span class="gradient-text">Programación Orientada a Objetos</span>
+        </h1>
 
-          <p class="text-gray-400 max-w-3xl">
-            Objetivo: Participar activamente en clase y desarrollar una página web consolidando los conceptos aprendidos.
+        <p class="text-gray-400 mt-4 max-w-3xl mx-auto">
+          Clases, objetos, herencia, polimorfismo y clases abstractas explicados de forma clara y visual.
+        </p>
+
+        <a href="../index.html" class="inline-block mt-6 glass px-6 py-3 rounded-xl font-bold hover:bg-white/5 transition">
+          ⬅ Volver al inicio
+        </a>
+      </section>
+
+      <!-- INTRO -->
+      <section class="glass rounded-3xl p-8 mb-10">
+        <h2 class="text-2xl font-bold mb-4 gradient-text">¿Qué es POO?</h2>
+        <p class="text-gray-300 leading-relaxed">
+          La Programación Orientada a Objetos (POO) es un paradigma donde el código se organiza como
+          objetos del mundo real: usuarios, autos, cuentas, productos, etc.
+        </p>
+
+        <ul class="mt-4 text-gray-400 list-disc pl-6 space-y-2">
+          <li><b>Clase:</b> el molde o plantilla</li>
+          <li><b>Objeto:</b> una instancia creada desde la clase</li>
+          <li>Permite código más ordenado, reutilizable y mantenible</li>
+        </ul>
+      </section>
+
+      <!-- GRID SECCIONES -->
+      <div class="grid md:grid-cols-2 gap-8">
+
+        <!-- CLASES -->
+        <section class="glass rounded-3xl p-8">
+          <h2 class="text-xl font-bold gradient-text mb-4">Clases y Objetos</h2>
+          <p class="text-gray-300 mb-4">
+            Una clase es una plantilla con atributos y métodos.
           </p>
 
-          <a href="../index.html" class="glass px-6 py-3 rounded-xl font-bold hover:bg-white/5 transition">
-            ⬅ Volver al inicio
-          </a>
+<pre class="bg-black/40 rounded-xl p-4 text-sm overflow-x-auto">
+class Persona {
+  String nombre;
+  int edad;
+
+  void saludar() {
+    System.out.println("Hola soy " + nombre);
+  }
+}
+</pre>
+        </section>
+
+        <!-- HERENCIA -->
+        <section class="glass rounded-3xl p-8">
+          <h2 class="text-xl font-bold gradient-text mb-4">Herencia</h2>
+          <p class="text-gray-300 mb-4">
+            Permite que una clase hija herede propiedades de una clase padre.
+          </p>
+
+<pre class="bg-black/40 rounded-xl p-4 text-sm overflow-x-auto">
+class Animal {
+  String nombre;
+}
+
+class Perro extends Animal {
+  void ladrar() {
+    System.out.println("Guau");
+  }
+}
+</pre>
+        </section>
+
+        <!-- POLIMORFISMO -->
+        <section class="glass rounded-3xl p-8">
+          <h2 class="text-xl font-bold gradient-text mb-4">Polimorfismo</h2>
+          <p class="text-gray-300 mb-4">
+            Un mismo método puede comportarse distinto según el objeto.
+          </p>
+
+<pre class="bg-black/40 rounded-xl p-4 text-sm overflow-x-auto">
+class Animal {
+  void sonido() {
+    System.out.println("Sonido");
+  }
+}
+
+class Perro extends Animal {
+  void sonido() {
+    System.out.println("Guau");
+  }
+}
+</pre>
+        </section>
+
+        <!-- ABSTRACTAS -->
+        <section class="glass rounded-3xl p-8">
+          <h2 class="text-xl font-bold gradient-text mb-4">Clases Abstractas</h2>
+          <p class="text-gray-300 mb-4">
+            Son clases base que no pueden instanciarse y obligan a implementar métodos.
+          </p>
+
+<pre class="bg-black/40 rounded-xl p-4 text-sm overflow-x-auto">
+abstract class Figura {
+  abstract double area();
+}
+
+class Cuadrado extends Figura {
+  double lado;
+
+  double area() {
+    return lado * lado;
+  }
+}
+</pre>
+        </section>
+
+      </div>
+
+      <!-- VIDEO -->
+      <section class="glass rounded-3xl p-8 mt-12">
+        <h2 class="text-2xl font-bold gradient-text mb-6">Video de la Lección</h2>
+
+        <div class="aspect-video rounded-2xl overflow-hidden">
+          <iframe
+            src="https://drive.google.com/file/d/1QfTebXVD4DFs7b9UCqWBaZRSpKLByBnz/preview"
+            class="w-full h-full border-0"
+            allow="autoplay"
+            allowfullscreen>
+          </iframe>
         </div>
       </section>
 
-      <!-- Contenido -->
-      <section class="grid gap-6">
+      <!-- FOOTER -->
+      <footer class="text-center text-gray-500 mt-10">
+        Desarrollo de Aplicaciones Móviles — Lección 1
+      </footer>
 
-        <!-- Temas -->
-        <div class="glass p-6 rounded-3xl">
-          <h2 class="text-2xl font-bold mb-2">📋 Temas a desarrollar</h2>
-          <ul class="text-gray-300 list-disc pl-6 space-y-2 mt-4">
-            <li>¿Qué es una expresión? (definición, tipos y ejemplos)</li>
-            <li>Tipos de operadores (aritméticos, lógicos, relacionales, etc.)</li>
-            <li>5 ejercicios sobre funciones (con solución paso a paso)</li>
-            <li>Jetpack Compose: Text reutilizable mostrando nombre, edad y carrera (1 punto)</li>
-            <li>Jetpack Compose: Calculadora básica (+, -, ×, ÷) (2 puntos)</li>
-          </ul>
-          <p class="text-gray-400 text-sm mt-4">
-            ✅ Requisitos: cada tema incluye definición clara, ejemplos de código y explicaciones detalladas.
-          </p>
-        </div>
-
-        <!-- 1) Expresiones -->
-        <div class="glass p-6 rounded-3xl">
-          <h2 class="text-2xl font-bold mb-3">1) ¿Qué es una expresión?</h2>
-
-          <p class="text-gray-300 leading-relaxed">
-            Una <b>expresión</b> es una combinación de valores, variables y operadores que al evaluarse produce un
-            <b>resultado</b>. En programación, una expresión “se resuelve” y devuelve un valor final.
-          </p>
-
-          <div class="mt-4 grid md:grid-cols-3 gap-4">
-            <div class="glass p-4 rounded-2xl">
-              <h3 class="font-bold">Tipo</h3>
-              <p class="text-gray-400 text-sm mt-1">Aritmética</p>
-              <p class="text-gray-300 text-sm mt-2">Ejemplo: <b>5 + 3</b> → 8</p>
-            </div>
-            <div class="glass p-4 rounded-2xl">
-              <h3 class="font-bold">Tipo</h3>
-              <p class="text-gray-400 text-sm mt-1">Relacional</p>
-              <p class="text-gray-300 text-sm mt-2">Ejemplo: <b>10 &gt; 2</b> → true</p>
-            </div>
-            <div class="glass p-4 rounded-2xl">
-              <h3 class="font-bold">Tipo</h3>
-              <p class="text-gray-400 text-sm mt-1">Lógica</p>
-              <p class="text-gray-300 text-sm mt-2">Ejemplo: <b>true &amp;&amp; false</b> → false</p>
-            </div>
-          </div>
-
-          <p class="text-gray-400 text-sm mt-4 mb-2">Ejemplos (JavaScript):</p>
-          <pre class="glass p-4 rounded-2xl text-sky-200 text-sm overflow-auto"><code>// Expresión aritmética
-let total = 20 + 5;
-
-// Expresión relacional (devuelve true/false)
-let esMayor = 10 > 3;
-
-// Expresión lógica (combina true/false)
-let puedeEntrar = (edad >= 18) && (tieneCedula === true);</code></pre>
-
-          <p class="text-gray-300 text-sm mt-3">
-            Explicación: cada línea “se evalúa” y da un resultado. Por ejemplo, <b>10 &gt; 3</b> devuelve <b>true</b>.
-          </p>
-        </div>
-
-        <!-- 2) Operadores -->
-        <div class="glass p-6 rounded-3xl">
-          <h2 class="text-2xl font-bold mb-3">2) Tipos de operadores</h2>
-
-          <div class="grid md:grid-cols-2 gap-5 mt-4">
-
-            <div class="glass p-5 rounded-2xl">
-              <h3 class="text-xl font-bold">2.1 Aritméticos</h3>
-              <p class="text-gray-300 text-sm mt-2">Sirven para operaciones matemáticas.</p>
-              <pre class="glass p-4 rounded-2xl text-sky-200 text-sm overflow-auto mt-3"><code>// +  -  *  /  %
-let a = 10 + 5;   // 15
-let b = 10 - 5;   // 5
-let c = 10 * 2;   // 20
-let d = 10 / 2;   // 5
-let e = 10 % 3;   // 1 (residuo)</code></pre>
-            </div>
-
-            <div class="glass p-5 rounded-2xl">
-              <h3 class="text-xl font-bold">2.2 Relacionales</h3>
-              <p class="text-gray-300 text-sm mt-2">Comparan valores y devuelven true/false.</p>
-              <pre class="glass p-4 rounded-2xl text-sky-200 text-sm overflow-auto mt-3"><code>// >  <  >=  <=  ==  ===  !=
-let r1 = 5 > 3;      // true
-let r2 = 5 <= 3;     // false
-let r3 = 5 == "5";   // true (compara sin tipo)
-let r4 = 5 === "5";  // false (compara con tipo)</code></pre>
-            </div>
-
-            <div class="glass p-5 rounded-2xl">
-              <h3 class="text-xl font-bold">2.3 Lógicos</h3>
-              <p class="text-gray-300 text-sm mt-2">Unen condiciones (true/false).</p>
-              <pre class="glass p-4 rounded-2xl text-sky-200 text-sm overflow-auto mt-3"><code>// && (y)  || (o)  ! (negación)
-let l1 = (10 > 5) && (3 < 1); // false
-let l2 = (10 > 5) || (3 < 1); // true
-let l3 = !(10 > 5);           // false</code></pre>
-            </div>
-
-            <div class="glass p-5 rounded-2xl">
-              <h3 class="text-xl font-bold">2.4 Asignación</h3>
-              <p class="text-gray-300 text-sm mt-2">Guardan valores en variables.</p>
-              <pre class="glass p-4 rounded-2xl text-sky-200 text-sm overflow-auto mt-3"><code>// =  +=  -=  *=  /=
-let x = 10;
-x += 5; // x = x + 5 → 15
-x -= 2; // 13
-x *= 2; // 26
-x /= 2; // 13</code></pre>
-            </div>
-
-          </div>
-        </div>
-
-        <!-- 3) 5 ejercicios sobre funciones -->
-        <div class="glass p-6 rounded-3xl">
-          <h2 class="text-2xl font-bold mb-3">3) 5 ejercicios sobre funciones (con solución paso a paso)</h2>
-          <p class="text-gray-300">
-            A continuación hay 5 ejercicios con funciones usando JavaScript. Cada uno incluye pasos y código.
-          </p>
-
-          <!-- Ej 1 -->
-          <div class="mt-5 glass p-5 rounded-2xl">
-            <h3 class="text-xl font-bold">Ejercicio 1: Saludar</h3>
-            <p class="text-gray-300 mt-2"><b>Objetivo:</b> Crear una función que reciba un nombre y devuelva un saludo.</p>
-            <ol class="list-decimal pl-6 text-gray-300 mt-3 space-y-1">
-              <li>Crear una función <b>saludar</b>.</li>
-              <li>Recibir el parámetro <b>nombre</b>.</li>
-              <li>Retornar el texto "Hola + nombre".</li>
-            </ol>
-            <pre class="glass p-4 rounded-2xl text-sky-200 text-sm overflow-auto mt-3"><code>function saludar(nombre) {
-  return "Hola " + nombre;
-}
-console.log(saludar("Josué"));</code></pre>
-          </div>
-
-          <!-- Ej 2 -->
-          <div class="mt-5 glass p-5 rounded-2xl">
-            <h3 class="text-xl font-bold">Ejercicio 2: Sumar dos números</h3>
-            <p class="text-gray-300 mt-2"><b>Objetivo:</b> Crear una función que reciba 2 números y retorne su suma.</p>
-            <ol class="list-decimal pl-6 text-gray-300 mt-3 space-y-1">
-              <li>Crear una función <b>sumar</b>.</li>
-              <li>Recibir <b>a</b> y <b>b</b>.</li>
-              <li>Retornar <b>a + b</b>.</li>
-            </ol>
-            <pre class="glass p-4 rounded-2xl text-sky-200 text-sm overflow-auto mt-3"><code>function sumar(a, b) {
-  return a + b;
-}
-console.log(sumar(5, 3));</code></pre>
-          </div>
-
-          <!-- Ej 3 -->
-          <div class="mt-5 glass p-5 rounded-2xl">
-            <h3 class="text-xl font-bold">Ejercicio 3: Calcular IVA (12%)</h3>
-            <p class="text-gray-300 mt-2"><b>Objetivo:</b> Dado un precio, calcular el IVA y el total.</p>
-            <ol class="list-decimal pl-6 text-gray-300 mt-3 space-y-1">
-              <li>Crear una función <b>calcularTotal</b>.</li>
-              <li>Recibir <b>precio</b>.</li>
-              <li>IVA = precio * 0.12</li>
-              <li>Total = precio + IVA</li>
-            </ol>
-            <pre class="glass p-4 rounded-2xl text-sky-200 text-sm overflow-auto mt-3"><code>function calcularTotal(precio) {
-  const iva = precio * 0.12;
-  const total = precio + iva;
-  return { iva, total };
-}
-
-console.log(calcularTotal(10));</code></pre>
-          </div>
-
-          <!-- Ej 4 -->
-          <div class="mt-5 glass p-5 rounded-2xl">
-            <h3 class="text-xl font-bold">Ejercicio 4: Par o impar</h3>
-            <p class="text-gray-300 mt-2"><b>Objetivo:</b> Función que retorne "Par" o "Impar".</p>
-            <ol class="list-decimal pl-6 text-gray-300 mt-3 space-y-1">
-              <li>Crear función <b>parImpar</b>.</li>
-              <li>Recibir <b>n</b>.</li>
-              <li>Si n % 2 == 0 → Par, si no → Impar.</li>
-            </ol>
-            <pre class="glass p-4 rounded-2xl text-sky-200 text-sm overflow-auto mt-3"><code>function parImpar(n) {
-  return (n % 2 === 0) ? "Par" : "Impar";
-}
-console.log(parImpar(10));</code></pre>
-          </div>
-
-          <!-- Ej 5 -->
-          <div class="mt-5 glass p-5 rounded-2xl">
-            <h3 class="text-xl font-bold">Ejercicio 5: Promedio de 3 notas</h3>
-            <p class="text-gray-300 mt-2"><b>Objetivo:</b> Función que reciba 3 notas y retorne el promedio.</p>
-            <ol class="list-decimal pl-6 text-gray-300 mt-3 space-y-1">
-              <li>Crear función <b>promedio3</b>.</li>
-              <li>Recibir n1, n2, n3.</li>
-              <li>Retornar (n1 + n2 + n3) / 3.</li>
-            </ol>
-            <pre class="glass p-4 rounded-2xl text-sky-200 text-sm overflow-auto mt-3"><code>function promedio3(n1, n2, n3) {
-  return (n1 + n2 + n3) / 3;
-}
-console.log(promedio3(8, 7, 9));</code></pre>
-          </div>
-        </div>
-
-        <!-- 4) Jetpack Compose - Text reutilizable -->
-        <div class="glass p-6 rounded-3xl">
-          <h2 class="text-2xl font-bold mb-3">4) Jetpack Compose: Text reutilizable (1 punto)</h2>
-
-          <p class="text-gray-300">
-            Aquí creamos un <b>Composable</b> reutilizable que muestra <b>nombre</b>, <b>edad</b> y <b>carrera</b>.
-          </p>
-
-          <p class="text-gray-400 text-sm mt-3 mb-2">Código (Kotlin - Jetpack Compose):</p>
-          <pre class="glass p-4 rounded-2xl text-sky-200 text-sm overflow-auto"><code>@Composable
-fun TextInfo(label: String, value: String) {
-    // Este composable es reutilizable porque lo puedes usar muchas veces
-    Text(
-        text = "$label: $value",
-        style = MaterialTheme.typography.bodyLarge
-    )
-}
-
-@Composable
-fun Perfil() {
-    Column {
-        TextInfo("Nombre", "Josué Jacome")
-        TextInfo("Edad", "18")
-        TextInfo("Carrera", "Programación Visual")
-    }
-}</code></pre>
-
-          <p class="text-gray-300 text-sm mt-3">
-            Explicación: <b>TextInfo</b> recibe 2 parámetros (label y value) y lo puedes reutilizar para cualquier dato.
-          </p>
-        </div>
-
-        <!-- 5) Jetpack Compose - Calculadora básica -->
-        <div class="glass p-6 rounded-3xl">
-          <h2 class="text-2xl font-bold mb-3">5) Jetpack Compose: Calculadora básica (2 puntos)</h2>
-
-          <p class="text-gray-300">
-            Calculadora con 4 operaciones: sumar, restar, multiplicar y dividir.
-          </p>
-
-          <p class="text-gray-400 text-sm mt-3 mb-2">Código (Kotlin - Jetpack Compose):</p>
-          <pre class="glass p-4 rounded-2xl text-sky-200 text-sm overflow-auto"><code>@Composable
-fun CalculadoraBasica() {
-    var n1 by remember { mutableStateOf("") }
-    var n2 by remember { mutableStateOf("") }
-    var resultado by remember { mutableStateOf("") }
-
-    fun toDoubleOrNullSafe(text: String): Double? {
-        // Si el texto no es número, devuelve null
-        return text.toDoubleOrNull()
-    }
-
-    Column(verticalArrangement = Arrangement.spacedBy(10.dp)) {
-
-        OutlinedTextField(
-            value = n1,
-            onValueChange = { n1 = it },
-            label = { Text("Número 1") }
-        )
-
-        OutlinedTextField(
-            value = n2,
-            onValueChange = { n2 = it },
-            label = { Text("Número 2") }
-        )
-
-        Row(horizontalArrangement = Arrangement.spacedBy(10.dp)) {
-
-            Button(onClick = {
-                val a = toDoubleOrNullSafe(n1)
-                val b = toDoubleOrNullSafe(n2)
-                resultado = if (a != null && b != null) (a + b).toString() else "Ingresa números válidos"
-            }) { Text("+") }
-
-            Button(onClick = {
-                val a = toDoubleOrNullSafe(n1)
-                val b = toDoubleOrNullSafe(n2)
-                resultado = if (a != null && b != null) (a - b).toString() else "Ingresa números válidos"
-            }) { Text("-") }
-
-            Button(onClick = {
-                val a = toDoubleOrNullSafe(n1)
-                val b = toDoubleOrNullSafe(n2)
-                resultado = if (a != null && b != null) (a * b).toString() else "Ingresa números válidos"
-            }) { Text("×") }
-
-            Button(onClick = {
-                val a = toDoubleOrNullSafe(n1)
-                val b = toDoubleOrNullSafe(n2)
-                resultado = if (a != null && b != null) {
-                    if (b == 0.0) "No se puede dividir para 0" else (a / b).toString()
-                } else "Ingresa números válidos"
-            }) { Text("÷") }
-        }
-
-        Text(text = "Resultado: $resultado")
-    }
-}</code></pre>
-
-          <p class="text-gray-300 text-sm mt-3">
-            Explicación: se convierten los textos a número con <b>toDoubleOrNull()</b>. Si no son válidos, muestra error.
-          </p>
-        </div>
-
-        <!-- Botón final -->
-        <div class="text-center">
-          <a href="../index.html" class="glass px-8 py-3 rounded-xl font-bold hover:bg-white/5 transition inline-block">
-            ⬅ Volver al inicio
-          </a>
-        </div>
-
-      </section>
     </div>
   </main>
 </body>

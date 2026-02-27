@@ -1,69 +1,68 @@
-# Programación Visual — Portafolio (2026)
+# 📱 Portafolio de Deberes y Proyectos - Programación Móvil
+
+Bienvenido a mi repositorio de proyectos. Aquí encontrarás el desarrollo de las tareas, lecciones y el avance del Proyecto Integrador.
 
 ---
 
-## ✅ Contenido del proyecto
+## 📥 Descarga de Aplicaciones (APK)
+Puedes probar las aplicaciones nativas directamente en tu dispositivo Android:
 
-### 🧩 Deber 1 — Sentencias de Control
-**Objetivo:** Explicar las sentencias de control, su sintaxis y conceptos clave.  
-**Incluye:**
-- ¿Qué son las sentencias de control?
-- Tipos y sintaxis: `if/else`, `else if`, `switch`, `for`, `while`, `do while`
-- 2 ejercicios prácticos
-- 🎥 Video explicativo incrustado (Google Drive)
+* [**⬇️ Descargar App CRUD Room**](https://github.com/TU_USUARIO/TU_REPOSITORIO/raw/main/pages/Apks/AppCRUDRoom.apk)
+    * *Descripción:* Gestión de datos local con persistencia en SQLite.
+* [**⬇️ Descargar App Integraciones**](https://github.com/TU_USUARIO/TU_REPOSITORIO/raw/main/pages/Apks/AppIntegraciones.apk)
+    * *Descripción:* Módulo con servicios integrados de Firebase y Auth.
 
 ---
 
-### 🧩 Deber 2 — Funciones
-**Objetivo:** Explicar la teoría de funciones con ejemplos e imágenes.  
-**Incluye:**
-- ¿Qué son las funciones?
-- Tipos de funciones (declaradas y flecha)
-- Parámetros, retorno y scope
-- 2 ejercicios prácticos
-- 🖼️ Imágenes ilustrativas (diagramas)
-- 🎥 Video explicativo incrustado (Google Drive)
+## 🛠️ Deberes Realizados
+
+### **Deber 1: Consumo de una API**
+Consumo de datos externos mediante peticiones asíncronas.
+* **Enlace:** [API Users - JSONPlaceholder](https://jsonplaceholder.typicode.com/users)
+* **Objetivo:** Renderizado dinámico de datos de usuario en una interfaz web responsiva.
+
+### **Deber 2: Autenticación email/password y Google**
+Implementación de un sistema de seguridad completo.
+* **Tecnologías:** Firebase Auth / OAuth 2.0.
+* **Descripción:** Login mediante credenciales tradicionales y acceso rápido con cuentas de Google.
+
+### **Deber 3: CRUD utilizando Realtime Database**
+Gestión de datos en la nube en tiempo real.
+* **Tecnologías:** Firebase Realtime Database.
+* **Descripción:** Operaciones completas de Crear, Leer, Actualizar y Eliminar con sincronización instantánea.
+
+### **Deber 4: CRUD utilizando Room**
+Persistencia de datos local para aplicaciones Android.
+* **Biblioteca:** Room Persistence Library.
+* **Descripción:** Implementación de operaciones CRUD utilizando SQLite como base de datos interna.
 
 ---
 
-### 🧩 Deber 3 — Programación Orientada a Objetos (POO)
-**Objetivo:** Explicar los conceptos fundamentales de POO.  
-**Incluye:**
-- Clases y objetos
-- Los 4 pilares: Encapsulamiento, Herencia, Polimorfismo, Abstracción
-- Ejemplos de código
-- 2 ejercicios prácticos aplicando POO
-- 🎥 Video explicativo incrustado (Google Drive)
+## 📚 Lecciones y Evaluación
+
+### **Lección 1: POO**
+* Conceptos fundamentales de la Programación Orientada a Objetos aplicada al desarrollo móvil.
+
+### **Lección 2+3: Elaboración del Proyecto Integrador Teórico**
+* **Documentación:** Desarrollo de la base teórica, arquitectura de software y diagramas del proyecto.
 
 ---
 
-## 📘 Lecciones
+## 🚀 Presentación del Proyecto Integrador
+Recursos para la defensa final del proyecto:
 
-### 📌 Lección 1 — Actuación en Clase
-**Objetivo:** Consolidar conceptos vistos en clase en una página web.  
-**Incluye:**
-- ¿Qué es una expresión? (definición, tipos, ejemplos)
-- Tipos de operadores (aritméticos, lógicos, relacionales, etc.)
-- 5 ejercicios sobre funciones con solución paso a paso
-- Ejercicio extra: composable `Text` reutilizable (nombre, edad, carrera)
-- Calculadora básica: sumar, restar, multiplicar y dividir
-
----
-
-### 🎨 Lección 2 — Figma: Herramientas de Diseño
-**Objetivo:** Documentar comandos más usados en Figma, con capturas y ejemplos.  
-**Incluye:**
-- Selección y manipulación: **Move**, **Scale**
-- Dibujo: **Rectangle**, **Vector/Pen**, **Text**
-- Alineación y distribución: **Align**, **Distribute**
-- Componentes y estilos: **Components**, **Styles**
-- Prototipado: **Prototype (Interactions)**, **Present**
-- 🖼️ Capturas de pantalla integradas en la página
+* **Diapositivas:** Elaboración de material visual para la presentación.
+* **Puntos clave:**
+    * Explicación del tema y objetivos.
+    * Descripción de tecnologías utilizadas.
+    * Problema que resuelve la aplicación.
+    * Conclusiones y demostración de uso.
 
 ---
 
-## 📝 Examen Final
-
-
----
-
+## 💻 Tecnologías Utilizadas
+![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
+![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+![Firebase](https://img.shields.io/badge/Firebase-039BE5?style=for-the-badge&logo=Firebase&logoColor=white)
+![Android](https://img.shields.io/badge/Android-3DDC84?style=for-the-badge&logo=android&logoColor=white)
